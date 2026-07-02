@@ -1,0 +1,1409 @@
+/* =============================================================
+   F3 Networks — Home New Page Styles
+   File: assets/css/home-new.css
+   Stack: Bootstrap 5 + custom
+   ============================================================= */
+
+/* ── COLOUR TOKENS ─────────────────────────────────────────── */
+:root {
+        --f3-navy:        #0d1f33;
+        --f3-navy-mid:    #1a3a5c;
+    --f3-blue-light:  #96D1E8;
+        --f3-grey-bg:     #e8eaec;
+        --f3-grey-card:   #d4d6db;
+        --f3-grey-card-bg:#81828B57;   
+        --f3-olive:       #8a9a2a;
+        --f3-olive-light: #c1d82f;
+        --f3-olive-dark:  #667219;
+    --f3-white:       #E6E9EC;
+    --f3-text-dark:   #000000;
+    --f3-text-dark2:  #01162B;
+    --f3-text-gray:  #6C7E8E;
+    
+
+    --f3-text-dark-light: #333333;
+        --f3-text-mid:    #3a4a5c;
+        --f3-text-light:  #e8f4f8;
+
+    /* Spacing */
+    --f3-section-py:  100px;
+    --f3-section-py-sm: 60px;
+}
+
+body { font-family: "Source Sans 3", sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* .elementor-861 .elementor-element.elementor-element-d58103e { z-index:11; } */
+
+/* ── RESET / BASE ───────────────────────────────────────────── */
+.f3-home {
+    /* font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; */
+    overflow-x: hidden;
+}
+
+.f3-home *,
+.f3-home *::before,
+.f3-home *::after {
+    box-sizing: border-box;
+}
+#f3_home,
+#f3_home h1,
+#f3_home h2, 
+#f3_home h3, 
+#f3_home h4, 
+#f3_home h5, 
+#f3_home h6, 
+#f3_home p,
+#f3_home span,
+#f3_home article,
+#f3_home a,
+#f3_home ul > li{ font-family: "Source Sans 3", sans-serif !important; }
+
+#f3_home h1 br,
+#f3_home h2 br,
+#f3_home h3 br,
+#f3_home h4 br,
+#f3_home h5 br{ display: block; }
+
+/* ── BACKGROUND ZONES ───────────────────────────────────────── */
+
+.home.page-template-elementor_header_footer footer.elementor-location-footer .footer-icon-1 .elementor-icon-list-items > li:last-of-type,
+.home.page-template-elementor_header_footer footer.elementor-location-footer .footer-icon-1 .elementor-icon-list-items > li:nth-of-type(4),
+.home.page-template-elementor_header_footer footer.elementor-location-footer .footer-icon-2,
+.home.page-template-elementor_header_footer footer.elementor-location-footer .footer-icon-3,
+.home.page-template-elementor_header_footer footer.elementor-location-footer .newhome--footer{ display:none !important; }
+.page-template.page-template-page-templates footer.elementor-location-footer .landing--footer{ display:none !important; }
+
+
+/*
+ * ZONE CONCEPT:
+ * .f3-zone wraps one or more sections sharing the same background.
+ * Backgrounds are set on the ZONE, not on individual sections.
+ * This ensures colours are truly continuous across section borders.
+ */
+
+.f3-zone {
+    position: relative;
+    width: 100%;
+}
+
+/* Dark navy zone (S1 hero, S7+S8+S9) */
+.f3-zone--dark {
+     overflow: visible; position: relative; 
+    /* background-color: var(--f3-navy); */
+     background-color: #243c54;
+}
+.f3-zone--dark__lines {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background-image: url('../images/LINES_BOTTOM.png');
+    background-size: auto 101%;
+    background-position: top left;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+.f3-zone--dark::before {
+    /* content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    background-image: url('../images/LINES_BOTTOM.png');
+    background-size: auto 90%;
+    background-position: top left;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1; */
+}
+
+/* Light grey zone (S2, S3, S4, S6) */
+.f3-zone--light {
+    /* background-color: var(--f3-grey-bg); */
+    background-color: #e5e9ec;
+}
+
+
+/* Fiber optic zone (S5 — green/teal image) */
+.f3-zone--fiber {
+    /*background-image: url('../images/bg-fiber-green.webp');*/
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; /* ADD: needed for pseudo-elements */
+    min-height: max(700px, 51vw);  /* scales with screen width automatically */
+    display: flex;              /* ADD */
+    align-items: center;        /* ADD — centers content vertically */
+}
+/* Soft fade top and bottom so image blends into adjacent sections */
+.f3-zone--fiber::before,
+.f3-zone--fiber::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+/* Soft fade top and bottom so image blends into adjacent sections */
+.f3-zone--fiber::before,
+.f3-zone--fiber::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* Diagonal lines overlay — floats over entire light zone */
+.f3-zone--light .f3-zone__lines-overlay {
+    position: absolute;
+    top: 360px;
+    right: 35px; /*240px*/
+    width: 69%; /*29%*/
+    height: 120%;
+    background-image: url('../images/LINES_TOP.png');
+    background-size: auto 80%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+/* All section content sits above the zone overlays */
+.f3-zone .f3-section {
+    position: relative;
+     z-index: 10;          /* was 10 */
+}
+
+.section-devider{ margin-top:85px; }
+.section-devider2{ padding-top: 115px; padding-bottom: 115px;}
+.section-devider3{ margin-top:85px; }
+
+/* ── SECTIONS — SHARED ──────────────────────────────────────── */
+.f3-section {
+    /* padding: var(--f3-section-py) 0; 100px */
+}
+
+.f3-home .f3-section__heading {
+    font-size: clamp(28px, 4vw, 60px);
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--f3-text-dark);
+    margin-bottom: 20px;
+}
+.f3-home .f3-section__heading.f3__light,
+.f3-home .f3-section__text.f3__light{  color: var(--f3-white); }
+.f3-home .f3-section__heading.f3__blue-light,
+.f3-home .f3-section__text.f3__blue-light{  color: var(--f3-blue-light); }
+
+.f3-home .f3-feature-box__title{
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--f3-text-dark2);
+     margin-bottom: 16px;
+}
+.f3-home .f3-feature-box__text{
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.3;
+    color: var(--f3-text-dark2);
+}
+
+.f3-home .f3-feature-box__title.f3__light,
+.f3-home .f3-feature-box__text.f3__light{  color: var(--f3-white); }
+
+
+.f3-section__heading--light {
+    color: var(--f3-white);
+}
+
+.f3-section__heading--center {
+    text-align: center;
+}
+
+.f3-section__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--f3-text-mid);
+    max-width: 420px;
+    margin-bottom: 24px;
+}
+
+.f3-section__text--wide {
+    max-width: 680px;
+}
+
+.f3-section__text--light {
+    color: var(--f3-text-light);
+}
+
+/* ── BUTTONS ────────────────────────────────────────────────── */
+.f3-home .f3-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.6s, color 0.7s, border-color 0.6s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+/* White outline — for dark backgrounds */
+.f3-home .f3-btn--outline {
+    border-color: var(--f3-white);
+    color: var(--f3-white) !important;
+    background: transparent;
+}
+.f3-btn--outline:hover {
+    background: var(--f3-olive-dark); /* background: var(--f3-white); */
+    border: 1px solid var(--f3-olive-dark);
+    color: var(--f3-white) !important;
+}
+
+/* Dark outline — for light backgrounds */
+.f3-home .f3-btn--dark-outline {
+    border-color: var(--f3-text-dark2);
+    color: var(--f3-text-dark2) !important;
+    background: transparent;
+}
+.f3-btn--dark-outline:hover {
+    background: var(--f3-olive-dark);
+    border: 1px solid var(--f3-olive-dark);
+    color: var(--f3-white) !important;
+}
+
+.f3-btn--sm {
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+.f3-btn--submit {
+    background: var(--f3-navy-mid);
+    color: var(--f3-white) !important;
+    border-color: var(--f3-navy-mid);
+}
+.f3-btn--submit:hover {
+    background: var(--f3-navy);
+}
+
+.f3-hero__buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+/* ──────────────────────────────────────────/ BUTTONS*/
+
+/* ── S1: HERO ───────────────────────────────────────────────── */
+.f3-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-bottom: 320px; /* 220px room for cityscape overlap */
+    overflow: hidden;
+}
+
+/* Main hero composite image — worker + light burst */
+.f3-hero__bg-image {
+    position: absolute;
+    inset: 0;
+    /* background-image: url('../images/hero-main.png'); */
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.f3-hero__content {
+    position: relative;
+    z-index: 2;
+}
+.f3-home .f3-hero__heading {
+    font-size: clamp(34px, 5.5vw, 85px);
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--f3-white);
+    margin-bottom: 24px;
+}
+
+.f3-hero__subtext {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--f3-white);
+    margin-bottom: 32px;
+}
+
+/*
+ * WHITE CITYSCAPE — bottom of hero
+ * Position absolute, sits at very bottom of the hero section.
+ * Negative bottom margin makes it overlap into the light zone below.
+ * z-index 3 ensures it sits above both zones visually.
+ */
+.f3-cityscape {
+    position: absolute;
+    bottom: -230px;
+    left: 0;
+    width: 100%;
+    height: 345px;
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: auto 100%;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.f3-cityscape--white {
+    background-image: url('https://f3-networks.cayk.co/wp-content/uploads/2026/05/Group-1-3.webp'); /*No use??*/
+}
+
+.f3-cityscape--dark {
+    background-image: url('../images/cityscape-dark.png');
+    bottom:-485px; height:640px;
+}
+
+/* Remove overflow:hidden from dark zone so cityscape isn't clipped */
+.f3-zone--dark {
+    overflow: visible;
+}
+/* Remove overflow:hidden from hero too */
+.f3-hero {
+    overflow: visible;
+}
+/*
+ * CITYSCAPE BRIDGE
+ * Standalone element between the two zones.
+ * Negative margins pull it UP over the hero bottom
+ * and DOWN over the S2 top simultaneously.
+ * z-index sits above both zones.
+ */
+.f3-cityscape-bridge {
+    position: relative;
+    width: 100%;
+    /* Height = vw-based so it scales with screen width */
+    height: 28vw;
+    /* Pull UP into hero — overlap the dark zone */
+    margin-top: -13vw;      /* was -18vw — less negative = sits lower */
+    /* Pull DOWN into S2 — overlap the light zone */
+    margin-bottom: -10vw;
+    z-index: 10;
+    pointer-events: none;
+    background-image: url('https://f3-networks.cayk.co/wp-content/uploads/2026/05/Group-1-3.webp');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ── S2: SUPPORTING ─────────────────────────────────────────── */
+section.f3-supporting {  padding-top:50px; } 
+section.f3-supporting .f3-feature-box-wrap,
+section.f3-growth .f3-feature-box-wrap,
+section.f3-experience .f3-feature-box-wrap, 
+section.f3-solutions .f3-feature-box-wrap {
+    position: relative;
+    padding-top: 0; /* half the pill height */
+    margin-bottom: 0;
+}
+section.f3-supporting .f3-feature-box-wrap .f3-feature-box__pill,
+section.f3-growth .f3-feature-box-wrap .f3-feature-box__pill,
+section.f3-projects .f3-project-cards--container .f3-feature-box__pill,
+section.f3-experience .f3-feature-box-wrap .f3-feature-box__pill,
+section.f3-solutions .f3-feature-box-wrap .f3-feature-box__pill{
+    position: absolute;
+    top: 0;
+    left: 24px;
+    /* width: 55%; */
+    max-width: 141px;
+    display: block;
+    pointer-events: none;
+    z-index: 2;
+}
+/* Ensure box has background and correct padding */
+section.f3-supporting .f3-feature-box,
+section.f3-growth .f3-feature-box,
+section.f3-experience .f3-feature-box,
+section.f3-solutions .f3-feature-box {
+    background: var(--f3-grey-card-bg); /* #dcdee2 */
+    border-radius: 5px;
+    padding: 20px 15px 15px 20px;
+    position: relative;
+}
+section.f3-solutions .f3-feature-box { backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+
+section.f3-supporting .f3-feature-box-wrap .f3-feature-box p,
+section.f3-growth .f3-feature-box-wrap .f3-feature-box p,
+section.f3-experience .f3-feature-box-wrap .f3-feature-box p,
+section.f3-solutions .f3-feature-box-wrap .f3-feature-box p { margin-bottom: 0; padding-bottom: 0; }
+
+section.f3-supporting .f3-section__text, 
+section.f3-growth .f3-section__text, 
+section.f3-projects .f3-section__text,
+section.f3-experience .f3-section__text,
+section.f3-solutions .f3-section__text,
+section.f3-future .f3-section__text, 
+section.f3-contact .f3-section__text{
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--f3-text-dark-light);
+    margin-bottom: 3px;
+    max-width: 100%;
+    margin-block-end: 0 !important;
+}
+
+/* Hide old accent */
+section.f3-supporting .f3-feature-box__accent {
+    display: none;
+}
+
+/* Reduce gap between header row and content row */
+section.f3-supporting .f3-supporting__header,
+section.f3-growth .f3-supporting__header { margin-bottom: 16px; }
+
+section.f3-supporting .f3-supporting__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1 { width:125px; }
+section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-2 { width:275px; }
+section.f3-supporting .f3-supporting__left .f3-photo-pair img::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #2BA2D1;
+    opacity: 0.4; /* depends on Figma */
+    pointer-events: none;
+}
+section.f3-supporting .f3-feature-box { max-width: 100%;}
+
+                    /*Right col — allow boxes to bleed right
+                    section.f3-supporting .col-12.col-lg-7 { overflow: visible; }
+                    section.f3-supporting .f3-feature-box-wrap {
+                        position: relative;
+                        margin-right: calc(-50vw + 50%);
+                        padding-right: calc(40vw - 50%);
+                    }*/
+
+
+/* ── S3 + S6: CARDS ─────────────────────────────────────────── */
+.f3-card {
+    background: var(--f3-grey-card-bg);
+    border-radius: 4px;
+    padding: 24px;
+    height: 100%;
+}
+.f3-card__accent {
+    width: 40px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--f3-olive) 0%, var(--f3-olive-light) 100%);
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+.f3-card__title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--f3-text-dark);
+    margin-bottom: 10px;
+}
+.f3-card__title--light {
+    color: var(--f3-white);
+}
+.f3-card__text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--f3-text-mid);
+    margin: 0;
+}
+.f3-card__text--light {
+    color: rgba(255,255,255,0.8);
+}
+/* Glass card — for fiber optic dark section */
+.f3-card--glass {
+    background: var(--f3-grey-card-bg);
+    border: 1px solid black;
+    backdrop-filter: blur(4px);
+}
+
+/* ── S4: PROJECTS ───────────────────────────────────────────── */
+section.f3-projects .f3-project-cards--container { 
+     background: transparent;  
+    border-radius: 10px; 
+    position: relative; 
+    /* z-index: 2; */
+}
+section.f3-projects .f3-project-cards--container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--f3-grey-card-bg);
+    backdrop-filter: blur(11px); -webkit-backdrop-filter: blur(11%);
+    border-radius: 10px;
+    z-index: -1; 
+    opacity: 0.7;
+}
+section.f3-projects .f3-project-cards {
+    padding-top:60px; /* cards have image overhanging above */
+}
+section.f3-projects .f3-project-card {
+    background: var(--f3-white);
+    border-radius: 16px;
+    overflow: visible;
+    position: relative;
+    margin-top: 70px; /* space for overhanging image */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);  /*box-shadow: 0 4px 20px rgba(0,0,0,0.08);*/
+    height: calc(100% - 70px);  /* equal height cards */
+}
+section.f3-projects .f3-project-card__img-wrap {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 51%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 17px 20px rgba(0, 0, 0, 0.45);
+}
+section.f3-projects .f3-project-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section.f3-projects .f3-project-card__body {
+    padding: 76px 20px 28px;
+    position: relative;
+    height: 100%;
+}
+/* Green gradient accent on right side of project card */
+section.f3-projects .f3-project-card__accent {
+    position: absolute;
+    top: 62px;
+    right: -5px;
+    width: 52px;
+    height: 230px;
+    display: block;
+    pointer-events: none;
+    z-index: 2;
+}
+section.f3-projects .f3-project-card__city {
+    font-size: 19px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--f3-text-gray);
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+section.f3-projects  .f3-project-card__label {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--f3-text-gray);
+    margin-bottom: 10px;
+}
+section.f3-projects .f3-project-card__status {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--f3-text-gray);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+section.f3-projects .f3-project-card .f3-btn{ margin-bottom: 40px; }
+
+section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-1{ width: 245px; }
+section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-2{ width: 245px; }
+
+
+/* ── S5: EXPERIENCE (fiber optic) ───────────────────────────── */
+section.f3-experience {
+    overflow: visible;            /* was hidden — was clipping content */
+    width: 100%; 
+    padding: 100px 0;             /* ADD: breathing room top/bottom */
+    position: relative;
+    z-index: 2;                   /* above the ::before/::after fades */
+}
+/* Glass cards — pill accent on TOP like Figma (not left side) */
+section.f3-experience .f3-card--glass {
+    position: relative;
+    padding-top: 32px;            /* room for overhanging pill */
+    overflow: visible;            /* allow pill to overhang */
+}
+section.f3-experience .f3-card__accent {
+    position: absolute;
+    top: -12px;                   /* hangs above card top edge */
+    left: 20px;
+    width: 60px;
+    height: 14px;
+    background: linear-gradient(90deg, var(--f3-olive) 0%, var(--f3-olive-light) 100%);
+    border-radius: 6px;
+}
+section.f3-experience .f3-card__accent {
+    position: absolute;
+    top: -12px;                   /* hangs above card top edge */
+    left: 20px;
+    width: 60px;
+    height: 14px;
+    background: linear-gradient(90deg, var(--f3-olive) 0%, var(--f3-olive-light) 100%);
+    border-radius: 6px;
+}
+section.f3-experience .f3-card__title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--f3-white);
+    margin-bottom: 8px;
+}
+section.f3-experience .f3-card__text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    margin: 0;
+}
+section.f3-experience .f3-feature-box {
+    background: var(--f3-grey-card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);  
+}
+
+
+/* ── S6: SOLUTIONS ──────────────────────────────────────────── */
+.f3-solutions {
+    position: relative;
+    padding-bottom: calc(var(--f3-section-py) + 100px);  /*room for dark cityscape*/
+}
+
+/* ── S7: FUTURE-READY ───────────────────────────────────────── */
+section.f3-future {
+    position: relative;
+    padding: 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+/*
+ * CITYSCAPE TOP + BOTTOM for S7
+ * Uses the BREAK.png (cityscape silhouette with dark fill).
+ * Top image flipped vertically to create mirrored city effect.
+ */
+section.f3-future .f3-future__city-top { /*No NNED!*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    /* background-image: url('../images/BREAK.png'); */
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transform: scaleY(-1); /* flip to show city growing downward from top */
+    z-index: 1;
+    pointer-events: none;
+}
+section.f3-future .f3-future__city-bottom { /*No NNED!*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    /* background-image: url('../images/BREAK.png'); */
+    background-size: 100% auto;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
+}
+
+section.f3-future .f3-supporting__header{ align-items: flex-end; }
+
+section.f3-future .f3-future__content{
+    position: relative;
+    /* z-index: 2; */
+    margin-top: -220px;
+}
+section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px; }
+
+/* ── S8: CONTACT ────────────────────────────────────────────── */
+.f3-home .f3-contact { overflow: hidden; }
+/* .f3-home #contact_form .gform_footer, .f3-home #contact_form #gform_submit_button_1{ display:none !important } */
+#contact_form .gform_footer {
+    position: static ;
+    margin: 0; 
+    padding: 0;
+    height: 0 ;
+    overflow: visible;
+}
+.f3-home .f3-contact #gform_submit_button_1{
+    position: absolute;
+    bottom: 145px ;
+    right: 24px;
+    width: calc(40% - 65px);
+    background: transparent
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+.f3-form-wrapper {
+    position: relative;
+}
+
+.f3-home .f3-reach {
+  /* border: 1px solid rgba(255,255,255,0.35); */
+  border-radius: 4px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.f3-home .f3-reach__heading {
+  color: var(--f3-blue-light);
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+.f3-home .f3-reach__list {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+.f3-home .f3-reach__item {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.f3-home .f3-reach__icon > img{
+    width:42px; height:auto; max-width:initial;
+}
+.f3-home .f3-reach__text {
+  color: var(--f3-blue-light);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration:none !important;
+}
+.f3-home .f3-reach__item > a:hover > .f3-reach__text{ color: var(--f3-olive-dark); }
+.f3-home .f3-reach__note {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--f3-blue-light);
+  line-height: 1.2;
+  margin: 4px 0 16px;
+}
+
+
+.f3-home .f3-form-wrapper {
+    border: 1px solid rgba(255,255,255,0.35);
+    background: #2C465E;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-start;
+}
+.f3-home .f3-form-wrapper #contact_form {
+    flex: 0 0 62.5%;
+    min-width: 0;
+}
+.f3-home .f3-form-wrapper .f3-reach {
+    flex: 0 0 37.5%;
+    min-width: 0;
+}
+.f3-home .f3-form-wrapper #contact_form .ginput_container > input{
+    background-color: var(--f3-text-gray);
+    color: white;
+}
+.f3-home .f3-form-wrapper #contact_form .ginput_container > input[name="input_12"]{
+    height: 100px;
+}
+.f3-home .f3-form-wrapper #contact_form form .gform-body .gform_fields{
+    row-gap: 14px;
+}
+
+.f3-home .f3-contact .f3-reach .f3-btn--submit,
+.f3-home .f3-contact #gform_submit_button_1{
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    transition: background .6s, color .7s, border-color .6s;
+    cursor: pointer;
+    color: #96D1E8 !important;
+    border: 1px solid #96D1E8;
+    background: transparent;
+}
+.f3-home .f3-contact .f3-reach .f3-btn--submit:hover,
+.f3-home .f3-contact #gform_submit_button_1:hover{
+    background: #667219;
+    border: 1px solid #667219;
+    color: #ffffff !important;
+}
+.f3-home .f3-contact .gfield_description.gform_fileupload_rules { color:white; }
+
+.gform_confirmation_message_1 {
+    color: white;
+    font-size: 17px;
+}
+
+
+/* ── S9: FAQ ────────────────────────────────────────────────── */
+.f3-faq {
+    overflow: hidden;
+}
+
+.f3-faq__eye {
+    position: absolute;
+    right: 0;
+    /* top: -37%; width: 71%; height: 138%;*/
+    top: clamp(-20%, -3vw, -37%);
+    width: clamp(60%, 68vw, 71%);
+    height: clamp(110%, 125%, 138%);
+
+    background-image: url('../images/EYE.png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.f3-faq__lines {
+    /* position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    background-image: url('../images/LINES_BOTTOM.png');
+    background-size: auto 80%;
+    background-position: top left;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    transform: scaleX(-1); 
+    pointer-events: none;
+    z-index: 1; */
+}
+
+
+/* FAQ Accordion */
+.f3-accordion {
+    position: relative;
+    z-index: 2;
+}
+
+.f3-accordion__item {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.f3-accordion__item:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.f3-accordion__trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--f3-white);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s;
+    gap: 16px;
+}
+
+.f3-accordion__trigger:hover {
+    color: var(--f3-blue-light);
+}
+
+.f3-accordion__icon {
+    font-size: 18px;
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+    color: var(--f3-blue-light);
+}
+
+.f3-accordion__item.is-open .f3-accordion__icon {
+    transform: rotate(45deg);
+}
+
+.f3-accordion__body {
+    display: none;
+    padding: 0 16px 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+}
+
+.f3-accordion__item.is-open .f3-accordion__body {
+    display: block;
+}
+
+
+/* ===================================
+   OFFCANVAS SIDE MENU 
+===================================*/
+/* --- Trigger button --- */
+.container-btn-trigger-position.__menu .site-menu-trigger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0 !important;
+
+}
+.container-btn-trigger-position.__menu { position:relative; }
+.container-btn-trigger-position.__menu > .row{ 
+    justify-content: flex-end; 
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    position: absolute;
+    top: 25px;
+    right:1px;
+    z-index: 44;
+}
+/* Fix Submit button width */
+.container-btn-trigger-position.__menu .f3-btn {
+  width: auto;
+  white-space: nowrap;
+  padding: 10px 18px;
+  font-size: 15px;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.container-btn-trigger-position.__menu .site-menu-trigger:hover,
+.container-btn-trigger-position.__menu .f3-btn:hover{
+    background: var(--f3-olive-dark);
+    border: 1px solid var(--f3-olive-dark);
+    color: var(--f3-white) !important;
+}
+.container-btn-trigger-position.__menu .site-menu-trigger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #ffffff !important;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+/* --- Backdrop overlay --- */
+.__menu.site-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 1040;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+.__menu.site-menu-overlay.is-open {
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+/* --- Offcanvas panel --- */
+nav.site-offcanvas {
+  position: fixed;
+  top: 0;
+  left: -320px;          /* hidden off-screen to the left */
+  width: 300px;
+  height: 100vh;
+   background: var(--f3-navy-mid); /*background: #fff;*/
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 32px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+nav.site-offcanvas.is-open {
+  left: 0;
+}
+/* --- Panel header (logo + close) --- */
+nav.site-offcanvas .site-offcanvas__head {
+  display: block;
+  padding: 20px 20px 16px;
+  position: relative;
+}
+nav.site-offcanvas .site-offcanvas__logo img {
+  max-height: 40px;
+  width: auto;
+}
+nav.site-offcanvas .site-offcanvas__logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: #111;
+}
+nav.site-offcanvas .site-offcanvas__close {
+  width: 36px;
+  height: 36px;
+  background-color: transparent !important;
+  border: none;
+  font-size: 32px !important;
+  line-height: 1!important;
+  cursor: pointer;
+  color: var(--f3-white) !important;
+  opacity: 0.35;
+  position: absolute; top: -6px;right: 15px;
+  transition: opacity 0.15s, color 0.15s;
+}
+nav.site-offcanvas .site-offcanvas__close:hover {
+    background-color: transparent;
+    color: red !important;
+    opacity: 1;
+}
+/* --- WP nav menu items --- */
+nav.site-offcanvas .navbar-nav{
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+}
+nav.site-offcanvas .navbar-nav li a.nav-link{
+  display: block;
+  padding: 11px 24px;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--f3-white);
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  border-left: 2px solid transparent;
+  transition: color 0.1s, border-color 0.75s, background 0.75s;
+}
+nav.site-offcanvas .navbar-nav li a.nav-link:hover,
+nav.site-offcanvas .navbar-nav li a.nav-link.active{
+  color: var(--f3-olive-dark);
+  border-left-color: var(--f3-olive-dark);
+  background: rgba(255, 255, 255, 0.03);
+  padding-left: 25px; /*compensate for the 2px border so text doesn't jump */
+  font-weight: bold;
+}
+
+                /* --- Submit a Request button spacing inside the panel --- */
+                /* nav.site-offcanvas .f3-btn { display: inline-block; width: calc(100% - 4px); text-align: center;} */
+
+/* --- Prevent body scroll when menu open --- */
+body.menu-is-open { overflow: hidden; }
+/* ===================================
+   OFFCANVAS SIDE MENU ==> END
+===================================*/
+
+
+
+
+
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (min-width: 1650px) {
+    section.f3-supporting .col-12.col-lg-7 { overflow:visible; }
+    section.f3-supporting .f3-feature-box-wrap { position:relative; margin-right:calc(-50vw + 50%); padding-right: calc(40vw - 50%); }
+}
+@media (min-width: 922px){ .page-template.page-template-template-home-new .ast-container{ display: block !important; } }
+    
+/*f3-cityscape-bridge` RESPONSIVE:*/
+    /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 1350px*/
+    @media (max-width: 1350px) {
+        .f3-cityscape-bridge {
+            height: 30vw;
+            margin-top: -19vw;
+            margin-bottom: -11vw;
+        }
+    }
+    /* ───────────────────────── `f3-cityscape-bridge`RESPONSIVE: 991px */
+    @media (max-width: 991px) {
+        .f3-cityscape-bridge {
+            height: 34vw;
+            margin-top: -20vw;
+            margin-bottom: -14vw;
+        }
+        .f3-cityscape-bridge{
+            background-size: 141% 90%;
+            background-position: 1% 100%;
+        }
+    }
+    /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 767px*/
+    @media (max-width: 767px) {
+        #f3_home h1 br, #f3_home h2 br, #f3_home h3 br, #f3_home h4 br, #f3_home h5 br{ display:none; }
+        .f3-cityscape-bridge {
+            height: 42vw;
+            margin-top: -24vw;
+            margin-bottom: -18vw;
+        }
+    }
+    /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 575px*/
+    @media (max-width: 575px) {
+        .f3-cityscape-bridge{
+            background-size: 180% 90%;
+            background-position: 31% 100%;
+        }
+    }
+    /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 480px */
+    @media (max-width: 480px) {
+        .f3-cityscape-bridge {
+            height: 55vw;
+            margin-top: -30vw;
+            margin-bottom: -25vw;
+        }
+        .f3-cityscape-bridge{
+            background-size: 235% 90%;
+            background-position: 15% 100%;
+        }
+    }
+    /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 399px */
+    @media (max-width: 399px) {
+        .f3-cityscape-bridge{
+            background-size: 290% 90%;
+            background-position: 58% 100%;
+        }
+    }
+    /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 330px */
+    @media (max-width: 399px) {
+        .f3-cityscape-bridge{
+            background-size: 290% 90%;
+            background-position: 58% 100%;
+        }
+    }
+/*____/f3-cityscape-bridge` RESPONSIVE:*/
+
+
+@media (max-width: 1399px) {
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1,
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-2{ width: 170px; }
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{ margin-bottom: 15px; }
+
+    section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-1,
+    section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-2 { width: 210px; }
+    
+    .f3-faq__eye{ height:111%; top:-11%; }
+    section.f3-faq.section-devider2 { padding-top: 70px; padding-bottom: 70px; }
+}
+@media (max-width: 1199px) {
+    section.f3-supporting .f3-supporting__left{ margin-left:0; } 
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1,
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-2{ width: 140px; }
+
+    section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-1,
+    section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-2 { width: 175px; }
+
+    .f3-faq__eye{ height:91%; top:9%; }
+    section.f3-faq.section-devider2 { padding-top: 70px; padding-bottom: 70px; }
+
+    .f3-home .f3-contact #gform_submit_button_1{ bottom: 100px !important; }
+
+    section.f3-projects .f3-project-card__body { padding: 12px 20px 28px; }
+    section.f3-projects .f3-project-card__city { font-size: 18px; }
+    section.f3-projects .f3-project-card__label { font-size: 26px; }
+    section.f3-projects .f3-project-card__status { font-size: 15px; margin-bottom: 50px; }
+}
+@media (max-width: 991px) {
+    :root {
+        --f3-section-py: var(--f3-section-py-sm);
+    }
+    .f3-hero {
+        min-height: 80vh;
+        padding-bottom: 100px;
+    }
+    .f3-photo-pair__img {
+        height: 140px;
+    }
+    .f3-future__content {
+        padding: 160px 0;
+    }
+    .f3-hero__bg-image {
+        background-position: 65% 100%;
+    }
+
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1,
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-2{ width: inherit; }
+
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{ margin-bottom:0; }
+
+    section.f3-projects .f3-section__text { max-width: 51%; }
+
+    section.f3-future .f3-supporting__header { padding:0 15px; }
+
+    .f3-zone--dark__lines{
+        left: -75px;
+        width: 70%;
+        height: 100%;
+        background-size: auto 95%;
+        background-position: bottom left;
+    }
+    .f3-home .f3-form-wrapper .f3-reach{ padding-top: 10px; }
+    .f3-home .f3-contact .f3-reach .f3-btn--submit { width:50% !important; margin:0 auto;}
+
+    #contact_form .gform_footer{
+        position:inherit; padding:inherit; height: inherit; margin-top:20px;
+    }
+    .f3-home .f3-contact #gform_submit_button_1{ position:inherit; }
+
+    section.f3-projects .f3-project-card__body { padding: 80px 20px 28px; }
+    section.f3-projects .f3-project-card__city { font-size: 19px; }
+    section.f3-projects .f3-project-card__label { font-size: 30px; }
+    section.f3-projects .f3-project-card__status { font-size: 16px; margin-bottom: 15px; }
+
+    section.f3-projects .f3-project-cards { padding-bottom: 30px; }
+}
+@media (max-width: 767px) {
+    .section-devider { margin-top: 55px; }
+
+    .f3-hero {
+        min-height: 55vh; /*70vh*/
+    }
+    .f3-hero__bg-image {
+        background-position: 65% 100%;
+    }
+    .f3-project-card {
+        margin-top: 60px;
+    }
+    .f3-future__content {
+        padding: 140px 0;
+    }
+    .f3-zone--light .f3-zone__lines-overlay {
+        opacity: 0.3;
+        width: 70%;
+    }
+    section.f3-projects .f3-section__text { max-width: 100%; padding-bottom: 25px; }
+    section.f3-future .f3-future__content{ margin-top: -185px; }
+    section.f3-future .f3-supporting__header .f3-hero__buttons{ justify-content: center; }
+
+    .f3-faq__eye{ height:62%; top:38%; }
+    .f3-home .f3-reach__note { margin-bottom:0 !important; }
+
+    #contact_form .gform_footer { margin-bottom:22px; }
+    .f3-home .f3-contact #gform_submit_button_1 { width: calc(55% - 65px); }
+
+    section.f3-projects .f3-project-card__img-wrap { width: 45%; }
+    section.f3-projects .f3-project-card__accent{ right: -15px; }
+}
+@media (max-width: 575px) {
+    section.f3-projects .f3-project-card {
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+    section.f3-projects .f3-project-card__img-wrap { width: 37%; }
+    section.f3-projects .f3-project-card__accent{ right: -5px; }
+    section.f3-projects .f3-project-cards--container::before{ background: transparent; }
+    section.f3-projects .f3-project-cards--container .f3-feature-box__pill{ display: none; }
+    section.f3-projects .f3-project-cards { padding-top: 25px; }
+
+    section.f3-experience { padding: 15px 0; }
+
+    .f3-faq__eye{ height:62%; top:38%; }
+    .f3-home .f3-form-wrapper .f3-reach { padding-top: 1px; padding-left: 1px; padding-right: 1px; }
+    .f3-home .f3-reach__note { margin-bottom:0 !important; }
+    .f3-home .f3-form-wrapper{ padding-right:12px; padding-left:12px; }
+
+    .f3-home .f3-contact #gform_submit_button_1 {width:100%;}
+    .f3-hero__subtext,
+    section.f3-supporting .f3-section__text, section.f3-growth .f3-section__text, section.f3-projects .f3-section__text, section.f3-experience .f3-section__text, section.f3-solutions .f3-section__text, section.f3-future .f3-section__text, section.f3-contact .f3-section__text{ font-size: 14px; }
+    .f3-home .f3-feature-box__text{ font-size: 15px; }
+
+    .f3-home .f3-experience .f3-section__heading, .f3-home .f3-experience .f3-section__text { color: var(--f3-text-dark); }
+    .f3-home .f3-feature-box__title { font-size:18px; margin-bottom:10px;}
+
+    section.f3-projects .f3-project-cards { padding-bottom: 1px; }
+}
+@media (max-width: 457px) {
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{  margin-bottom: 1rem !important; }
+    section.f3-projects .f3-project-card__img-wrap { width: 51%; }
+    section.f3-projects .f3-project-card { margin-right: inherit; margin-left: inherit; }
+
+    .f3-faq__eye{ height:25%; top:75%; }
+    .f3-home .f3-experience .f3-btn--outline{ border-color: var(--f3-text-dark2); color: var(--f3-text-dark2) !important; }
+    .f3-home .f3-experience .f3-btn--outline:hover{ background: var(--f3-olive-dark); border: 1px solid var(--f3-olive-dark); color: var(--f3-white) !important; }
+}
+@media (max-width: 394px) {
+    section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-1{ margin-right: 0 !important; width: inherit; }
+    section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-2{ width: inherit; }
+    .f3-faq__eye{ height:25%; top:75%; }
+    .f3-home .f3-contact .f3-reach .f3-btn--submit { width: 100% !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .f3-project-cards .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .f3-project-card__img-wrap img {
+        width: 100%;
+        height: auto;
+    }
+    .f3-project-card {
+        padding: 10px;
+    }
+    .f3-project-card__city {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    .f3-project-card__status {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .f3-form-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .f3-form-wrapper #contact_form,
+    .f3-form-wrapper .f3-reach {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
