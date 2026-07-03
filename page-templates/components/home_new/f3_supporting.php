@@ -20,10 +20,8 @@
             <!-- Left: photos + button -->
             <div class="offset-0 offset-lg-1 col-12 col-lg-4 text-center text-lg-start f3-supporting__left mb-4 mb-lg-0">
                 <div class="f3-photo-pair">
-                    <img class="f3-photo-pair-1 me-2" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/supporting-1.jpg"
-                        alt="Infrastructure work" class="f3-photo-pair__img me-2">
-                    <img class="f3-photo-pair-2" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/supporting-2.jpg"
-                        alt="Network infrastructure" class="f3-photo-pair__img">
+                    <img class="f3-photo-pair-1 me-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work"> <!--.f3-photo-pair__img-->
+                    <img class="f3-photo-pair-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-2.webp" alt="Network infrastructure"> <!--.f3-photo-pair__img-->
                 </div>
             </div>
 
@@ -31,7 +29,7 @@
             <div class="col-12 col-lg-7">
                 <!-- Box 1 -->
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="For Communities">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title text-uppercase mt-3">For Communities</h3>
                         <p class="f3-feature-box__text">
@@ -43,7 +41,7 @@
 
                 <!-- Box 2 -->
                 <div class="f3-feature-box-wrap mt-3">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="For Service Providers">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title text-uppercase mt-3">For Service Providers</h3>
                         <p class="f3-feature-box__text">

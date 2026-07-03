@@ -33,7 +33,8 @@ endwhile;
     ============================================================ -->
     <div class="f3-zone f3-zone--light">
         <!--Decorative lines overlay — covers entire light zone-->
-        <div class="f3-zone__lines-overlay"></div>
+        <div class="f3-zone__lines-overlay" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/LINES_TOP.webp');?>');"></div>
+        
 
         <?php get_template_part('page-templates/components/home_new/f3_supporting');?> <!--S2:SUPPORTING-->
         <?php get_template_part('page-templates/components/home_new/f3_growth');?> <!--S3:GROWTH-->
@@ -45,7 +46,7 @@ endwhile;
          Placed here in DOM but visually appears between S4 and S6
          via CSS order if needed, or just natural flow
         ============================================================ -->
-        <div class="f3-zone f3-zone--fiber section-devider" id="experience" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri() .'/assets/images/bg-fiber-green.webp');?>');">
+        <div class="f3-zone f3-zone--fiber section-devider" id="experience" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/bg-fiber-green.webp');?>');">
             <?php get_template_part('page-templates/components/home_new/f3_experience');?><!--S5:EXPERIENCE-->
         </div><!--/f3-zone--fiber -->
 
@@ -58,8 +59,8 @@ endwhile;
          Continuous dark zone — cityscape frames, lines overlay
     ============================================================ -->
     <div class="f3-zone f3-zone--dark position-relative">
-        <div class="f3-zone--dark__lines"></div>
-
+        <div class="f3-zone--dark__lines" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/LINES_BOTTOM.webp');?>');"></div>
+        
         <?php get_template_part('page-templates/components/home_new/f3_future');?><!--S7:FUTURE-->
         <?php get_template_part('page-templates/components/home_new/f3_contact');?><!--S8:SUBMIT A REQUEST/CONTACT--> 
         <?php get_template_part('page-templates/components/home_new/f3_faq');?><!--S9: FAQ-->

@@ -1,7 +1,7 @@
 <!--S1: HERO-->
 <section class="f3-section f3-hero" id="hero">
     <!-- Background layers (stacked via CSS) -->
-    <div class="f3-hero__bg-image" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri() .'/assets/images/hero-main.webp');?>');"></div>
+    <div class="f3-hero__bg-image" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/hero-main.webp');?>');"></div>
 
     <!-- Content -->
     <div class="container-lg f3-hero__content mt-5">

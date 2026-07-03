@@ -4,7 +4,7 @@
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
                 <h2 class="f3-section__heading text-white text-center text-md-start">
-                    See What Future-Ready<br class="d-none d-md-block"> Looks Like
+                    See What Future-Ready<br> Looks Like
                 </h2>
                 <p class="f3-section__text text-white text-center text-md-start">Explore current solutions, learn more about F3 Networks, or connect with the team about a project, community update, or general inquiry.</p>
             </div>

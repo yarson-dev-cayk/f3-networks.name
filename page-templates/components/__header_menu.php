@@ -7,8 +7,8 @@
 <!-- Side panel -->
 <nav id="site-offcanvas" class="site-offcanvas" aria-label="Main navigation">
   <div class="site-offcanvas__head">
-    <a href="<?php echo home_url('/'); ?>" class="site-offcanvas__logo">
-      <img src="http://f3-networks.name/wp-content/uploads/2026/05/F3-Networks-logo.webp" alt="<?php bloginfo('name'); ?>">
+    <a href="<?php echo home_url('/');?>" class="site-offcanvas__logo">
+      <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/F3-Networks-logo.webp" alt="<?php bloginfo('name');?>">
     </a>
 	<button class="site-offcanvas__close" onclick="siteMenuClose()" aria-label="Close menu">x</button>
 

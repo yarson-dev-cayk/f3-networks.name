@@ -15,7 +15,7 @@
         <div class="row g-4 mt-2">
             <div class="col-12 col-md-4">
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="Experienced Leadership">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title f3__light mt-3">Experienced Leadership</h3>
                         <p class="f3-feature-box__text f3__light">
@@ -26,7 +26,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="Practical Execution">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title f3__light mt-3">Practical Execution</h3>
                         <p class="f3-feature-box__text f3__light">
@@ -37,7 +37,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="Long-Term Thinking">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title f3__light mt-3">Long-Term Thinking</h3>
                         <p class="f3-feature-box__text f3__light">

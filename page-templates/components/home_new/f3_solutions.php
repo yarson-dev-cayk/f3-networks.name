@@ -1,13 +1,13 @@
 <!--S6:SOLUTIONS FOR EVOLVING DIGITAL NEEDS-->
 <section class="f3-section f3-solutions section-devider" id="solutions">
     <!-- Dark cityscape growing from bottom — transitions to S7 dark zone -->
-    <div class="f3-cityscape f3-cityscape--dark"></div>
+    <div class="f3-cityscape f3-cityscape--dark" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/cityscape-dark.webp');?>');"></div>
 
     <div class="container-lg">
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
                 <h2 class="f3-section__heading">
-                    Solutions For Evolving<br class="d-none d-md-block"> Digital Needs
+                    Solutions For Evolving<br> Digital Needs
                 </h2>
                 <p class="f3-section__text">F3 Networks offers solutions designed to support deployment, ongoing operations, and long-term value.</p>
             </div>
@@ -16,7 +16,7 @@
         <div class="row g-4 mt-2">
             <div class="col-12 col-md-4">
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title text-uppercase mt-3">Dark Fiber Leasing</h3>
                         <p class="f3-feature-box__text">Access to scalable infrastructure designed to meet evolving network requirements and support long-term growth.</p>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title text-uppercase mt-3">Delivery & Construction</h3>
                         <p class="f3-feature-box__text">End-to-end delivery for infrastructure projects, from planning and coordination through field execution.</p>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="">
+                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
                     <div class="f3-feature-box">
                         <h3 class="f3-feature-box__title text-uppercase mt-3">Operations & Maintenance</h3>
                         <p class="f3-feature-box__text">Ongoing operational support designed to help infrastructure perform reliably, efficiently, and with lasting value.</p>

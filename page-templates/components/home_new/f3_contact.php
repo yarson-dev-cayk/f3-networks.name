@@ -30,19 +30,19 @@
                 <ul class="f3-reach__list">
                     <li class="f3-reach__item">
                         <span class="f3-reach__icon">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/file-form-icon.svg" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/file-form-icon.svg" alt="Submit a request through the contact form">
                         </span>
                         <span class="f3-reach__text">Submit a request through the contact form</span>
                     </li>
                     <li class="f3-reach__item">
                         <span class="f3-reach__icon">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/phone-form-icon.svg" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/phone-form-icon.svg" alt="Call our support line">
                         </span>
                         <a href="tel:844-390-9100" class="f3-reach__text"><span class="f3-reach__text">Call our support line</span></a>
                     </li>
                     <li class="f3-reach__item">
                         <span class="f3-reach__icon">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/email-form-icon.svg" alt="">
+                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/email-form-icon.svg" alt="Email our team directly">
                         </span>
                         <a href="mailto:CustomerService@F3Networks.ca" class="f3-reach__text"><span class="f3-reach__text">Email our team directly</span></a>
                     </li>
@@ -50,13 +50,6 @@
                 <p class="f3-reach__note">
                     Note: Once we receive your message, our team will follow up within 2 business days.
                 </p>
-
-                <!--Fake visual button — triggers real hidden(in CSS) GF submit-->
-                <!-- <button type="button" class="f3-btn--submit f3-btn f3-btn--dark-outline w-100 mt-3"
-                    onclick="submitF3Form()">
-                    Submit
-                </button> -->
-                <!--Fake visual button — triggers real hidden(in CSS) GF submit-->
             </div>
 
         </div>
