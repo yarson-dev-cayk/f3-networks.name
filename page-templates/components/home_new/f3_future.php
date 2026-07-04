@@ -3,16 +3,34 @@
     <div class="container-lg f3-future__content">
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <h2 class="f3-section__heading text-white text-center text-md-start">
-                    See What Future-Ready<br> Looks Like
-                </h2>
-                <p class="f3-section__text text-white text-center text-md-start">Explore current solutions, learn more about F3 Networks, or connect with the team about a project, community update, or general inquiry.</p>
+                <?php if($future_title = get_field('future_title')):?><h2 class="f3-section__heading text-white text-center text-md-start"><?php echo $future_title;?></h2><?php endif;?>
+                <?php if($future_subtitle = get_field('future_subtitle')):?><p class="f3-section__text text-white text-center text-md-start"><?php echo $future_subtitle;?></p><?php endif;?>
             </div>
+
             <div class="col-12 col-md-6">
-                <div class="f3-hero__buttons text-center text-md-start mt-4">
-                    <a href="#" class="f3-btn f3-btn--outline">Explore Our Solutions</a>
-                    <a href="#contact" class="f3-btn f3-btn--outline">Contact Us</a>
-                </div> 
+                <?php
+                $future_btnlink1 = get_field('future_btnlink1') ?? [];
+                $future_btnlink2 = get_field('future_btnlink2') ?? [];
+
+                $futureBtnlinkT   = $future_btnlink1['title'] ?? '';
+                $futureBtnlinkU   = $future_btnlink1['url'] ?? '';
+                $futureBtnlinkTrg = $future_btnlink1['target'] ?? '_self';
+
+                $futureBtn2linkT   = $future_btnlink2['title'] ?? '';
+                $futureBtn2linkU   = $future_btnlink2['url'] ?? '';
+                $futureBtn2linkTrg = $future_btnlink2['target'] ?? '_self';
+                ?>
+                <?php if( $future_btnlink1 || $future_btnlink2 ):?>
+                    <div class="f3-hero__buttons text-center text-md-start mt-4">
+                        <?php if($future_btnlink1) :?>
+                            <a href="<?php echo $futureBtnlinkU;?>" class="f3-btn f3-btn--outline" target="<?php echo $futureBtnlinkTrg;?>"><?php echo $futureBtnlinkT;?></a>
+                        <?php endif;?>
+
+                        <?php if($future_btnlink2) :?>
+                            <a href="<?php echo $futureBtn2linkU;?>" class="f3-btn f3-btn--outline" target="<?php echo $futureBtn2linkTrg;?>"><?php echo $futureBtn2linkT;?></a>
+                        <?php endif;?>
+                    </div> 
+                <?php endif;?>
             </div>
         </div>
     </div>

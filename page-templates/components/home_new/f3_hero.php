@@ -1,23 +1,45 @@
 <!--S1: HERO-->
 <section class="f3-section f3-hero" id="hero">
-    <!-- Background layers (stacked via CSS) -->
-    <div class="f3-hero__bg-image" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/hero-main.webp');?>');"></div>
+    <!-- Background layers(stacked via CSS) -->
+    <?php if($hero_bgimage = get_field('hero_bgimage')): ?>
+        <div class="f3-hero__bg-image" style="background-image: url('<?php echo esc_url($hero_bgimage);?>');"></div>
+    <?php else: ?>
+        <div class="f3-hero__bg-image" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/hero-main.webp');?>');"></div>
+    <?php endif;?>
 
     <!-- Content -->
     <div class="container-lg f3-hero__content mt-5">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <h1 class="f3-hero__heading">Infrastructure<br>For Evolving<br>Digital Needs</h1>
-                <p class="f3-hero__subtext">
-                    F3 Networks helps shape the infrastructure behind connectivity, growth, and
-                    emerging digital demands with practical solutions built for long-term relevance.
-                </p>
-                <div class="f3-hero__buttons">
-                    <a href="#contact" class="f3-btn f3-btn--outline">Submit A Request</a>
-                    <a href="#contact" class="f3-btn f3-btn--outline">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
+                <?php if($hero_title = get_field('hero_title')): ?><h1 class="f3-hero__heading"><?php echo $hero_title;?></h1><?php endif;?>
+                <?php if($hero_subtitle = get_field('hero_subtitle')): ?><p class="f3-hero__subtext"><?php echo $hero_subtitle;?></p><?php endif;?>
+                
+                <?php
+                $hero_btnlink = get_field('hero_btnlink') ?? [];
+                $hero_btnlink2 = get_field('hero_btnlink2') ?? [];
+
+                $heroBtnlinkT   = $hero_btnlink['title'] ?? '';
+                $heroBtnlinkU   = $hero_btnlink['url'] ?? '';
+                $heroBtnlinkTrg = $hero_btnlink['target'] ?? '_self';
+
+                $heroBtnlink2T   = $hero_btnlink2['title'] ?? '';
+                $heroBtnlink2U   = $hero_btnlink2['url'] ?? '';
+                $heroBtnlink2Trg = $hero_btnlink2['target'] ?? '_self';
+                ?>
+                <?php if( $hero_btnlink || $hero_btnlink2 ):?>
+                    <div class="f3-hero__buttons">
+                        <?php if($hero_btnlink) :?>
+                            <a href="<?php echo $heroBtnlinkU;?>" class="f3-btn f3-btn--outline" target="<?php echo $heroBtnlinkTrg;?>"><?php echo $heroBtnlinkT;?></a>
+                        <?php endif;?>
+
+                        <?php if($hero_btnlink2) :?>
+                            <a href="<?php echo $heroBtnlink2U;?>" class="f3-btn f3-btn--outline" target="<?php echo $heroBtnlink2Trg;?>"><?php echo $heroBtnlink2T;?></a>
+                        <?php endif;?>
+                    </div> 
+                <?php endif;?>
+
+            </div><!--/.col-->
+        </div><!--/.row-->
+    </div><!--/.container-->
 </section>
 <!--/S1: HERO-->

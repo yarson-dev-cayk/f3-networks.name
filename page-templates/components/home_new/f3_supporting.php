@@ -5,57 +5,69 @@
         <!-- Full-width heading + text row -->
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <h2 class="f3-section__heading">Supporting Modern<br> Infrastructure Needs</h2>
-                <p class="f3-section__text">
-                    F3 Networks operates across the infrastructure and systems that help communities
-                    and service providers move forward. The approach is grounded in practical
-                    solutions, reliable execution, and long-term thinking.
-                </p>
+                <?php if($supporting_title= get_field('supporting_title')):?><h2 class="f3-section__heading"><?php echo $supporting_title;?></h2><?php endif;?>
+                <?php if($supporting_subtitle = get_field('supporting_subtitle')):?><p class="f3-section__text"><?php echo $supporting_subtitle;?></p><?php endif;?>
             </div>
         </div>
 
         <!-- Content row: photos left, feature boxes right -->
         <div class="row align-items-center">
-
             <!-- Left: photos + button -->
             <div class="offset-0 offset-lg-1 col-12 col-lg-4 text-center text-lg-start f3-supporting__left mb-4 mb-lg-0">
                 <div class="f3-photo-pair">
-                    <img class="f3-photo-pair-1 me-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work"> <!--.f3-photo-pair__img-->
-                    <img class="f3-photo-pair-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-2.webp" alt="Network infrastructure"> <!--.f3-photo-pair__img-->
+                    <?php if($supporting_image1 = get_field('supporting_image1')): ?>
+                        <img class="f3-photo-pair-1 me-2" src="<?php echo esc_url($supporting_image1);?>" alt="Infrastructure work">
+                    <?php else: ?>
+                        <img class="f3-photo-pair-1 me-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work">
+                    <?php endif;?>
+
+                    <?php if($supporting_image2 = get_field('supporting_image2')): ?>
+                        <img class="f3-photo-pair-2" src="<?php echo esc_url($supporting_image2);?>" alt="Network infrastructure">
+                    <?php else: ?>
+                        <img class="f3-photo-pair-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-2.webp" alt="Network infrastructure">
+                    <?php endif;?>
                 </div>
             </div>
 
-            <!-- Right: feature boxes with overhanging pill -->
+            <!--Right: feature boxes with overhanging pill-->
             <div class="col-12 col-lg-7">
-                <!-- Box 1 -->
-                <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="For Communities">
-                    <div class="f3-feature-box">
-                        <h3 class="f3-feature-box__title text-uppercase mt-3">For Communities</h3>
-                        <p class="f3-feature-box__text">
-                            F3 Networks helps shape infrastructure planning and deployment that prepares
-                            communities for long-term growth, connectivity, and changing demands.
-                        </p>
-                    </div>
-                </div>
+                <?php if(have_rows('supporting_blocks')) :?>
+                    <?php $i = 0;?>
+                    <?php while(have_rows('supporting_blocks')) : the_row();?>
+                        <?php
+                        $supporting_blocks_title = get_sub_field('supporting_blocks_title');
+                        $supporting_blocks_subtitle = get_sub_field('supporting_blocks_subtitle');
+                        ?>
+                        <div class="f3-feature-box-wrap <?php echo ($i === 1) ? 'mt-3' : '';?>">
+                            <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="For Communities">
+                            <div class="f3-feature-box">
+                                <?php if($supporting_blocks_title):?>
+                                    <h3 class="f3-feature-box__title text-uppercase mt-3"><?php echo esc_html($supporting_blocks_title);?></h3>
+                                <?php endif;?>
+                                <?php if($supporting_blocks_subtitle):?>
+                                    <p class="f3-feature-box__text"><?php echo esc_html($supporting_blocks_subtitle);?></p>
+                                <?php endif;?>
+                            </div>
+                        </div>
+                        <?php $i++;?>
+                    <?php endwhile;?>
+                <?php endif;?>
+            </div> <!--/.col-->
+            <!--Right: feature boxes with overhanging pill-->
 
-                <!-- Box 2 -->
-                <div class="f3-feature-box-wrap mt-3">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="For Service Providers">
-                    <div class="f3-feature-box">
-                        <h3 class="f3-feature-box__title text-uppercase mt-3">For Service Providers</h3>
-                        <p class="f3-feature-box__text">
-                            F3 Networks provides the infrastructure behind network expansion, helping
-                            service providers grow with confidence and adapt as needs evolve.
-                        </p>
-                    </div>
+            <?php
+            $supporting_btnlink = get_field('supporting_btnlink') ?? [];
+            $supportingBtnlinkT   = $supporting_btnlink['title'] ?? '';
+            $supportingBtnlinkU   = $supporting_btnlink['url'] ?? '';
+            $supportingBtnlinkTrg = $supporting_btnlink['target'] ?? '_self';
+            ?>
+            <?php if($supporting_btnlink) :?>
+                <div class="f3-section__actions mt-4 text-center">
+                    <a href="<?php echo esc_url($supportingBtnlinkU);?>" class="f3-btn f3-btn--dark-outline" target="<?php echo esc_attr($supportingBtnlinkTrg);?>"><?php echo esc_html($supportingBtnlinkT);?></a>
                 </div>
-            </div>
+            <?php endif; ?>
 
-            <div class="f3-section__actions mt-4 text-center">
-                <a href="#" class="f3-btn f3-btn--dark-outline">About F3 Networks</a>
-            </div>
-        </div>
-    </div>
+        </div><!--/.row-->
+    </div><!--/.container-->
 </section>
 <!--/S2: SUPPORTING MODERN INFRASTRUCTURE NEEDS-->

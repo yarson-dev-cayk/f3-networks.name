@@ -415,7 +415,7 @@ html { scroll-behavior: smooth; }
     margin-bottom: -10vw;
     z-index: 10;
     pointer-events: none;
-    background-image: url('https://f3-networks.cayk.co/wp-content/uploads/2026/05/Group-1-3.webp');
+    /* background-image: url('https://f3-networks.cayk.co/wp-content/uploads/2026/05/Group-1-3.webp'); */
     background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1347,6 +1347,8 @@ body.menu-is-open { overflow: hidden; }
     .f3-home section.f3-faq .f3-accordion{ padding: 65px 10%; }
 
     .f3-home .f3-form-wrapper #contact_form.form--notification{ flex: 0 0 16%; }
+
+    .f3-home .f3-hero .f3-hero__content .f3-hero__subtext, .f3-home section.f3-contact .f3-section__text { max-width:60%; }
 }
 @media (max-width: 767px) {
     .section-devider { margin-top: 55px; }
@@ -1381,6 +1383,8 @@ body.menu-is-open { overflow: hidden; }
     section.f3-projects .f3-project-card__accent{ right: -10px; }
 
     .f3-home section.f3-faq .f3-accordion{ padding: 35px 25px; }
+
+    .f3-home .f3-hero .f3-hero__content .f3-hero__subtext, .f3-home section.f3-contact .f3-section__text { max-width:80%; }
 }
 @media (max-width: 575px) {
     section.f3-projects .f3-project-card {
@@ -1414,6 +1418,8 @@ body.menu-is-open { overflow: hidden; }
     .f3-home section.f3-faq .f3-accordion__icon { font-size: 28px; }
 
     .f3-home .f3-form-wrapper #contact_form.form--notification #gform_confirmation_message_1{ font-size:21px; }
+
+    .f3-home .f3-hero .f3-hero__content .f3-hero__subtext, .f3-home section.f3-contact .f3-section__text { max-width:100%; }
 }
 @media (max-width: 457px) {
     section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{  margin-bottom: 1rem !important; }

@@ -24,7 +24,7 @@ endwhile;
     </div><!--/f3-zone--dark-->
 
     <!-- CITYSCAPE BRIDGE — sits between dark and light zones -->
-    <div class="f3-cityscape-bridge"></div>
+    <div class="f3-cityscape-bridge" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/Group-1-3.webp');?>');"></div>
 
     <!-- ============================================================
          BACKGROUND ZONE 2: LIGHT GREY (S2, S3, S4, S6)
@@ -46,7 +46,11 @@ endwhile;
          Placed here in DOM but visually appears between S4 and S6
          via CSS order if needed, or just natural flow
         ============================================================ -->
-        <div class="f3-zone f3-zone--fiber section-devider" id="experience" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/bg-fiber-green.webp');?>');">
+        <?php if($experience_bgimage = get_field('experience_bgimage')):?>
+            <div class="f3-zone f3-zone--fiber section-devider" id="experience" style="background-image: url('<?php echo esc_url($experience_bgimage);?>');">
+        <?php else: ?>
+            <div class="f3-zone f3-zone--fiber section-devider" id="experience" style="background-image: url('<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/bg-fiber-green.webp');?>');">
+        <?php endif;?>
             <?php get_template_part('page-templates/components/home_new/f3_experience');?><!--S5:EXPERIENCE-->
         </div><!--/f3-zone--fiber -->
 

@@ -6,45 +6,43 @@
     <div class="container-lg">
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <h2 class="f3-section__heading">
-                    Solutions For Evolving<br> Digital Needs
-                </h2>
-                <p class="f3-section__text">F3 Networks offers solutions designed to support deployment, ongoing operations, and long-term value.</p>
+                <?php if($solutions_title = get_field('solutions_title')):?><h2 class="f3-section__heading"><?php echo $solutions_title;?></h2><?php endif;?>
+                <?php if($solutions_subtitle = get_field('solutions_subtitle')):?><p class="f3-section__text"><?php echo $solutions_subtitle;?></p><?php endif;?>
             </div>
         </div>
 
         <div class="row g-4 mt-2">
-            <div class="col-12 col-md-4">
-                <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
-                    <div class="f3-feature-box">
-                        <h3 class="f3-feature-box__title text-uppercase mt-3">Dark Fiber Leasing</h3>
-                        <p class="f3-feature-box__text">Access to scalable infrastructure designed to meet evolving network requirements and support long-term growth.</p>
-                        <a href="#" class="f3-btn f3-btn--dark-outline f3-btn--sm mt-3">Learn More</a>
+            <?php if(have_rows('solutions_blocks')) :?>
+                <?php while(have_rows('solutions_blocks')) : the_row();?>
+                    <?php
+                    $solutions_blocks_title = get_sub_field('solutions_blocks_title');
+                    $solutions_blocks_subtitle = get_sub_field('solutions_blocks_subtitle');
+                    ?>
+                    <div class="col-12 col-md-4">
+                        <div class="f3-feature-box-wrap">
+                            <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
+                            <div class="f3-feature-box">
+                                <?php if($solutions_blocks_title):?><h3 class="f3-feature-box__title text-uppercase mt-3"><?php echo esc_html($solutions_blocks_title);?></h3><?php endif;?>
+                                <?php if($solutions_blocks_subtitle):?><p class="f3-feature-box__text"><?php echo esc_html($solutions_blocks_subtitle);?></p><?php endif;?>
+
+                                <?php if( $solutions_blocks_btnlink = get_sub_field('solutions_blocks_btnlink') ?? [] ) :?>
+                                    <?php $solutions_blocks_btnlink = get_sub_field('solutions_blocks_btnlink') ?? []; $solutionsBtnlinkT = $solutions_blocks_btnlink['title'] ?? ''; $solutionsBtnlinkU = $solutions_blocks_btnlink['url'] ?? ''; $solutionsBtnlinkTrg = $solutions_blocks_btnlink['target'] ?? '_self';?>
+                                    <a href="<?php echo $solutionsBtnlinkU;?>" class="f3-btn f3-btn--dark-outline f3-btn--sm mt-3" target="<?php echo $solutionsBtnlinkTrg;?>"><?php echo $solutionsBtnlinkT;?></a>
+                                <?php endif;?>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endwhile;?>
+            <?php endif;?>
+        </div><!--/.row-->
+
+        <?php if( get_field('solutions_btnlink') ?? [] ):?>
+            <div class="f3-section__actions mt-4 text-center">
+                <?php $solutions_btnlink = get_field('solutions_btnlink') ?? []; $solutionsBtnlinkT = $solutions_btnlink['title'] ?? ''; $solutionsBtnlinkU = $solutions_btnlink['url'] ?? ''; $solutionsBtnlinkTrg = $solutions_btnlink['target'] ?? '_self';?>
+                <a href="<?php echo $solutionsBtnlinkU;?>" class="f3-btn f3-btn--dark-outline" target="<?php echo $solutionsBtnlinkTrg;?>"><?php echo $solutionsBtnlinkT;?></a>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
-                    <div class="f3-feature-box">
-                        <h3 class="f3-feature-box__title text-uppercase mt-3">Delivery & Construction</h3>
-                        <p class="f3-feature-box__text">End-to-end delivery for infrastructure projects, from planning and coordination through field execution.</p>
-                        <a href="#" class="f3-btn f3-btn--dark-outline f3-btn--sm mt-3">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="f3-feature-box-wrap">
-                    <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
-                    <div class="f3-feature-box">
-                        <h3 class="f3-feature-box__title text-uppercase mt-3">Operations & Maintenance</h3>
-                        <p class="f3-feature-box__text">Ongoing operational support designed to help infrastructure perform reliably, efficiently, and with lasting value.</p>
-                        <a href="#" class="f3-btn f3-btn--dark-outline f3-btn--sm mt-3">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php endif;?>
+
+    </div> <!--/.container-->
 </section>
 <!--/S6:SOLUTIONS FOR EVOLVING DIGITAL NEEDS-->
