@@ -5,6 +5,9 @@
  */
 ?>
 <?php get_header();?>
+<!-- <div id="f3-preloader"><div class="f3-loader"></div></div> ==> (VAR-1) -->
+<!-- <div id="f3-preloader"><div class="dots-loader"><span></span><span></span><span></span></div></div> ==> (VAR-2) -->
+<div id="f3-preloader"><img class="f3-preloader-logo" src="<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/F3-Networks-logo.webp');?>" alt="Loading"></div>
 <?php
 while ( have_posts() ) :
     the_post();

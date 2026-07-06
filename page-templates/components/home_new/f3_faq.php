@@ -8,11 +8,11 @@
     <?php endif;?>
 
     <div class="container-lg">
-        <?php if($faq_title = get_field('faq_title')):?><h2 class="f3-section__heading f3__blue-light text-center mb-3 mb-md-5"><?php echo $faq_title;?></h2><?php endif;?>
-        <?php if($faq_subtitle = get_field('faq_subtitle')):?><p class="f3-section__text f3__blue-light text-center mx-auto"><?php echo $faq_subtitle;?></p><?php endif;?>
+        <?php if($faq_title = get_field('faq_title')):?><h2 class="f3-section__heading f3__blue-light text-center mb-3 mb-md-5" data-aos="fade-down-right"><?php echo $faq_title;?></h2><?php endif;?>
+        <?php if($faq_subtitle = get_field('faq_subtitle')):?><p class="f3-section__text f3__blue-light text-center mx-auto" data-aos="fade-up"><?php echo $faq_subtitle;?></p><?php endif;?>
 
         <div class="row justify-content-center mt-4">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-10">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-10" data-aos="zoom-in">
 
                 <div class="f3-accordion-bg">
                     <?php if(have_rows('faq_blocks')) : ?>

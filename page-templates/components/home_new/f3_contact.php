@@ -7,8 +7,8 @@
         <div class="row">
             <!--Left: heading + text-->
             <div class="col-12 col-lg-4">
-                <?php if($contact_title = get_field('contact_title')):?><h2 class="f3-section__heading f3__blue-light"><?php echo $contact_title;?></h2><?php endif;?>
-                <?php if($contact_subtitle = get_field('contact_subtitle')):?><p class="f3-section__text f3__blue-light"><?php echo $contact_subtitle;?></p><?php endif;?>
+                <?php if($contact_title = get_field('contact_title')):?><h2 class="f3-section__heading f3__blue-light" data-aos="fade-right"><?php echo $contact_title;?></h2><?php endif;?>
+                <?php if($contact_subtitle = get_field('contact_subtitle')):?><p class="f3-section__text f3__blue-light" data-aos="fade-up"><?php echo $contact_subtitle;?></p><?php endif;?>
             </div>
 
             <!--Center + Right: shared background wrapper-->

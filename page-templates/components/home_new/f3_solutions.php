@@ -6,8 +6,8 @@
     <div class="container-lg">
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <?php if($solutions_title = get_field('solutions_title')):?><h2 class="f3-section__heading"><?php echo $solutions_title;?></h2><?php endif;?>
-                <?php if($solutions_subtitle = get_field('solutions_subtitle')):?><p class="f3-section__text"><?php echo $solutions_subtitle;?></p><?php endif;?>
+                <?php if($solutions_title = get_field('solutions_title')):?><h2 class="f3-section__heading" data-aos="fade-up-right"><?php echo $solutions_title;?></h2><?php endif;?>
+                <?php if($solutions_subtitle = get_field('solutions_subtitle')):?><p class="f3-section__text" data-aos="fade-up"><?php echo $solutions_subtitle;?></p><?php endif;?>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
                     $solutions_blocks_subtitle = get_sub_field('solutions_blocks_subtitle');
                     ?>
                     <div class="col-12 col-md-4">
-                        <div class="f3-feature-box-wrap">
+                        <div class="f3-feature-box-wrap" data-aos="fade-up-left">
                             <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
                             <div class="f3-feature-box">
                                 <?php if($solutions_blocks_title):?><h3 class="f3-feature-box__title text-uppercase mt-3"><?php echo esc_html($solutions_blocks_title);?></h3><?php endif;?>

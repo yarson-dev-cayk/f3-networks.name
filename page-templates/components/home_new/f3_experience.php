@@ -3,8 +3,8 @@
     <div class="container-lg">
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <?php if($experience_title = get_field('experience_title')):?><h2 class="f3-section__heading f3__light"><?php echo $experience_title;?></h2><?php endif;?>
-                <?php if($experience_subtitle = get_field('experience_subtitle')):?><p class="f3-section__text f3__light"><?php echo $experience_subtitle;?></p><?php endif;?>
+                <?php if($experience_title = get_field('experience_title')):?><h2 class="f3-section__heading f3__light" data-aos="fade-right"><?php echo $experience_title;?></h2><?php endif;?>
+                <?php if($experience_subtitle = get_field('experience_subtitle')):?><p class="f3-section__text f3__light" data-aos="fade-up"><?php echo $experience_subtitle;?></p><?php endif;?>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
                         $experience_blocks_subtitle = get_sub_field('experience_blocks_subtitle');
                     ?>
                     <div class="col-12 col-md-4">
-                        <div class="f3-feature-box-wrap">
+                        <div class="f3-feature-box-wrap" data-aos="fade-left">
                             <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="Experienced Leadership">
                             <div class="f3-feature-box">
                                 <?php if($experience_blocks_title):?><h3 class="f3-feature-box__title f3__light mt-3"><?php echo esc_html($experience_blocks_title);?></h3><?php endif;?>

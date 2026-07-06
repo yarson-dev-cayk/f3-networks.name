@@ -3,9 +3,9 @@
     <div class="container-lg f3-future__content">
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <?php if($future_title = get_field('future_title')):?><h2 class="f3-section__heading text-white text-center text-md-start"><?php echo $future_title;?></h2><?php endif;?>
-                <?php if($future_subtitle = get_field('future_subtitle')):?><p class="f3-section__text text-white text-center text-md-start"><?php echo $future_subtitle;?></p><?php endif;?>
-            </div>
+                <?php if($future_title = get_field('future_title')):?><h2 class="f3-section__heading text-white text-center text-md-start" data-aos="zoom-in"><?php echo $future_title;?></h2><?php endif;?>
+                <?php if($future_subtitle = get_field('future_subtitle')):?><p class="f3-section__text text-white text-center text-md-start" data-aos="fade-right"><?php echo $future_subtitle;?></p><?php endif;?>
+            </div> <!-- zoom-in | zoom-in-up | zoom-in-down | zoom-in-left | zoom-in-right -->
 
             <div class="col-12 col-md-6">
                 <?php
@@ -21,7 +21,7 @@
                 $futureBtn2linkTrg = $future_btnlink2['target'] ?? '_self';
                 ?>
                 <?php if( $future_btnlink1 || $future_btnlink2 ):?>
-                    <div class="f3-hero__buttons text-center text-md-start mt-4">
+                    <div class="f3-hero__buttons text-center text-md-start mt-4" data-aos="fade-left">
                         <?php if($future_btnlink1) :?>
                             <a href="<?php echo $futureBtnlinkU;?>" class="f3-btn f3-btn--outline" target="<?php echo $futureBtnlinkTrg;?>"><?php echo $futureBtnlinkT;?></a>
                         <?php endif;?>

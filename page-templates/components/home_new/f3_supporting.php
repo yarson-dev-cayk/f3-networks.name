@@ -5,8 +5,8 @@
         <!-- Full-width heading + text row -->
         <div class="row f3-supporting__header">
             <div class="col-12 col-md-6">
-                <?php if($supporting_title= get_field('supporting_title')):?><h2 class="f3-section__heading"><?php echo $supporting_title;?></h2><?php endif;?>
-                <?php if($supporting_subtitle = get_field('supporting_subtitle')):?><p class="f3-section__text"><?php echo $supporting_subtitle;?></p><?php endif;?>
+                <?php if($supporting_title= get_field('supporting_title')):?><h2 class="f3-section__heading" data-aos="fade-right"><?php echo $supporting_title;?></h2><?php endif;?>
+                <?php if($supporting_subtitle = get_field('supporting_subtitle')):?><p class="f3-section__text" data-aos="fade-up"><?php echo $supporting_subtitle;?></p><?php endif;?>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                         $supporting_blocks_title = get_sub_field('supporting_blocks_title');
                         $supporting_blocks_subtitle = get_sub_field('supporting_blocks_subtitle');
                         ?>
-                        <div class="f3-feature-box-wrap <?php echo ($i === 1) ? 'mt-3' : '';?>">
+                        <div class="f3-feature-box-wrap <?php echo ($i === 1) ? 'mt-3' : '';?>" data-aos="fade-left">
                             <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color_thingy.svg" alt="For Communities">
                             <div class="f3-feature-box">
                                 <?php if($supporting_blocks_title):?>

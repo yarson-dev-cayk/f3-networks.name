@@ -74,71 +74,6 @@ html { scroll-behavior: smooth; }
 .home.page-template-elementor_header_footer footer.elementor-location-footer .newhome--footer{ display:none !important; }
 .page-template.page-template-page-templates footer.elementor-location-footer .landing--footer{ display:none !important; }
 
-/* ──PRE-LOADER (VAR-1) ───────────────────────────────────────── */
-/* #f3-preloader{
-    position:fixed;
-    inset:0;
-    background:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
-    transition:opacity .45s ease, visibility .45s ease;
-}
-#f3-preloader.hide{
-    opacity:0;
-    visibility:hidden;
-}
-.f3-loader{
-    width:64px;
-    height:64px;
-    border:4px solid #e9e9e9;
-    border-top-color:#1f72ff;
-    border-radius:50%;
-    animation:f3Spin .8s linear infinite;
-}
-@keyframes f3Spin{ to{transform:rotate(360deg);} } */
-/* ──/PRE-LOADER (VAR-1) ───────────────────────────────────────── */
-
-/* ──PRE-LOADER (VAR-2) ───────────────────────────────────────── */
-/* #f3-preloader{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#fff;
-    z-index:999999;
-    transition:.4s;
-}
-#f3-preloader.hide{opacity:0; visibility:hidden;}
-.dots-loader{display:flex;gap:10px;}
-.dots-loader span{
-    width:14px;
-    height:14px;
-    border-radius:50%;
-    background:#1f72ff;
-    animation:bounce .6s infinite alternate;
-}
-.dots-loader span:nth-child(2){animation-delay:.2s;}
-.dots-loader span:nth-child(3){animation-delay:.4s;}
-@keyframes bounce{from{transform:translateY(0);}to{transform:translateY(-14px);}} */
-/* ── /PRE-LOADER (VAR-2) ───────────────────────────────────────── */
-
-#f3-preloader{
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    transition: opacity .5s ease, visibility .5s ease;
-}
-#f3-preloader.hide{opacity: 0; visibility: hidden;}
-.f3-preloader-logo{ width: 420px; height:auto; animation: f3Pulse 1.4s ease-in-out infinite; }
-@keyframes f3Pulse{0%{transform: scale(0.95); opacity: 0.4;} 50%{transform: scale(1);opacity: 1;} 100%{transform: scale(0.95);opacity: 0.4;}}
-
 
 /*
  * ZONE CONCEPT:
@@ -1485,8 +1420,6 @@ body.menu-is-open { overflow: hidden; }
     .f3-home .f3-form-wrapper #contact_form.form--notification #gform_confirmation_message_1{ font-size:21px; }
 
     .f3-home .f3-hero .f3-hero__content .f3-hero__subtext, .f3-home section.f3-contact .f3-section__text { max-width:100%; }
-
-    [data-aos] {opacity: 1 !important;  transform: none !important; }
 }
 @media (max-width: 457px) {
     section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{  margin-bottom: 1rem !important; }

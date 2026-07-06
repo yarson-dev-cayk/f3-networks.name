@@ -5,12 +5,8 @@
 
             <!-- Left: heading + text + 2 photos -->
             <div class="col-12 col-lg-5">
-                <?php if($projects_title = get_field('projects_title')):?>
-                    <h2 class="f3-section__heading"><?php echo $projects_title;?></h2>
-                <?php endif;?>
-                <?php if($projects_subtitle = get_field('projects_subtitle')):?>
-                    <p class="f3-section__text"><?php echo $projects_subtitle;?></p>
-                <?php endif;?>
+                <?php if($projects_title = get_field('projects_title')):?><h2 class="f3-section__heading" data-aos="fade-right"><?php echo $projects_title;?></h2><?php endif;?>
+                <?php if($projects_subtitle = get_field('projects_subtitle')):?><p class="f3-section__text" data-aos="fade-up"><?php echo $projects_subtitle;?></p><?php endif;?>
              
                 <div class="f3-photo-pair f3-photo-pair-f3-projects text-center text-lg-start">
                     <?php if($projects_image1 = get_field('projects_image1')): ?>
@@ -41,7 +37,7 @@
                             //$projects_blocks_btnlink = get_sub_field('projects_blocks_btnlink');
                             ?>
                             <div class="col-12 col-sm-6 col-md-4">
-                                <div class="f3-project-card">
+                                <div class="f3-project-card" data-aos="fade-left">
 
                                     <?php if($projects_blocks_img):?> 
                                         <div class="f3-project-card__img-wrap"><img src="<?php echo $projects_blocks_img;?>" alt="<?php echo $projects_blocks_title;?>"></div>
