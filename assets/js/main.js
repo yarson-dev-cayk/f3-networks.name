@@ -48,4 +48,15 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 	/*__/Contact Form - Gravity Form Plugin*/
 
+
+	/*OFFCANVAS SIDE MENU - Main Menu - keep the element with buttons inside .container*/
+	// function updateMenuPosition(){
+	// 	const container = document.querySelector('.container-btn-trigger-position.__menu');
+	// 	const row = document.querySelector('.container-btn-trigger-position.__menu > .row');
+	// 	if (!container || !row) return;
+	// 	const containerRight = container.getBoundingClientRect().right;
+	// 	row.style.right = `${window.innerWidth - containerRight}px`;
+	// }
+	// window.addEventListener('load', updateMenuPosition); window.addEventListener('resize', updateMenuPosition);
+	/*__/OFFCANVAS SIDE MENU - Main Menu - keep the element with buttons inside .container*/
 });

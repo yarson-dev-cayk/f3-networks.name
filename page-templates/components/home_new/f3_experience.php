@@ -15,10 +15,10 @@
                         $experience_blocks_title = get_sub_field('experience_blocks_title');
                         $experience_blocks_subtitle = get_sub_field('experience_blocks_subtitle');
                     ?>
-                    <div class="col-12 col-md-4">
-                        <div class="f3-feature-box-wrap" data-aos="fade-left">
+                    <div class="col-12 col-md-4 d-block d-md-flex">
+                        <div class="f3-feature-box-wrap h-100 d-flex flex-column" data-aos="fade-left">
                             <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="Experienced Leadership">
-                            <div class="f3-feature-box">
+                            <div class="f3-feature-box flex-grow-1 d-flex flex-column">
                                 <?php if($experience_blocks_title):?><h3 class="f3-feature-box__title f3__light mt-3"><?php echo esc_html($experience_blocks_title);?></h3><?php endif;?>
                                 <?php if($experience_blocks_subtitle):?><p class="f3-feature-box__text f3__light"><?php echo esc_html($experience_blocks_subtitle);?></p><?php endif;?>
                             </div>

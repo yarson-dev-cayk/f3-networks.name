@@ -27,16 +27,19 @@
   </div>
 </nav>
 <!--/Backdrop overlay-->
+
 <!--Hamburger button — triggers the side menu-->
-<div class="container-lg container-btn-trigger-position __menu">
-	<div class="row">
-		<button class="site-menu-trigger f3-btn--outline me-4 me-md-0" onclick="siteMenuOpen()" aria-label="Open menu" aria-expanded="false"	aria-controls="site-offcanvas">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<!-- Submit a Request button -->
-		<a href="#contact" class="f3-btn f3-btn--outline d-none d-md-block me-4 me-lg-0">Submit a Request</a>
+<div class="sticky-top f3-menu-sticky">
+	<div class="container-lg container-btn-trigger-position __menu">
+		<div class="row">
+			<button class="site-menu-trigger f3-btn--outline me-4 me-md-0" onclick="siteMenuOpen()" aria-label="Open menu" aria-expanded="false" aria-controls="site-offcanvas">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<!-- Submit a Request button -->
+			<a href="#contact" class="f3-btn f3-btn--outline d-none d-md-block me-4 me-lg-0">Submit a Request</a>
+		</div>
 	</div>
- </div>
+</div>
 <!--/Hamburger button — triggers the side menu-->

@@ -329,7 +329,7 @@ html { scroll-behavior: smooth; }
     letter-spacing: 0.5px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.6s, color 0.7s, border-color 0.6s;
+    transition: background 0.7s, color 0.7s, border-color 0.6s;
     cursor: pointer;
     border: 1px solid transparent;
 }
@@ -341,7 +341,8 @@ html { scroll-behavior: smooth; }
     background: transparent;
 }
 .f3-btn--outline:hover {
-    background: var(--f3-olive-dark); /* background: var(--f3-white); */
+    /*background: var(--f3-olive-dark);  background: var(--f3-white); */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #E6EFAA 0%, #C1D82F 50%, #76841D 100%);
     border: 1px solid var(--f3-olive-dark);
     color: var(--f3-white) !important;
 }
@@ -353,7 +354,9 @@ html { scroll-behavior: smooth; }
     background: transparent;
 }
 .f3-btn--dark-outline:hover {
-    background: var(--f3-olive-dark);
+    /* background: var(--f3-olive-dark); */
+    /*background: linear-gradient(180deg, #E6EFAA 0%, #C1D82F 50%, #76841D 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));*/
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #E6EFAA 0%, #C1D82F 50%, #76841D 100%);
     border: 1px solid var(--f3-olive-dark);
     color: var(--f3-white) !important;
 }
@@ -393,7 +396,6 @@ html { scroll-behavior: smooth; }
 .f3-hero__bg-image {
     position: absolute;
     inset: 0;
-    /* background-image: url('../images/hero-main.png'); */
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
@@ -407,8 +409,8 @@ html { scroll-behavior: smooth; }
 .f3-home .f3-hero__heading {
     font-size: clamp(34px, 5.5vw, 85px);
     font-weight: 200;
-    font-style: normal;
-    letter-spacing: -1px;
+    font-style: normal; 
+    letter-spacing: 0;
     line-height: 1;
     text-transform: uppercase;
     color: var(--f3-white);
@@ -419,7 +421,7 @@ html { scroll-behavior: smooth; }
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: -1px;
+    letter-spacing: 0;
     text-transform: uppercase;
     line-height: 1;
     color: var(--f3-white);
@@ -710,6 +712,7 @@ section.f3-projects .f3-project-card__status {
 }
 section.f3-projects .f3-project-card .f3-btn{ margin-bottom: 40px; }
 
+section.f3-projects .f3-photo-pair-f3-projects{ display:flex; align-items:flex-end; }
 section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-1{ width: 245px; }
 section.f3-projects .f3-photo-pair-f3-projects .f3-photo-pair-f3-projects-2{ width: 245px; }
 
@@ -928,7 +931,7 @@ section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px;
     font-size: 16px;
     letter-spacing: 0.5px;
     border-radius: 5px;
-    transition: background .6s, color .7s, border-color .6s;
+    transition: background .7s, color .7s, border-color .6s;
     cursor: pointer;
     color: #96D1E8 !important;
     border: 1px solid #96D1E8;
@@ -936,7 +939,8 @@ section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px;
 }
 .f3-home .f3-contact .f3-reach .f3-btn--submit:hover,
 .f3-home .f3-contact #gform_submit_button_1:hover{
-    background: #667219;
+    /* background: #667219; */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #E6EFAA 0%, #C1D82F 50%, #76841D 100%);
     border: 1px solid #667219;
     color: #ffffff !important;
 }
@@ -1091,6 +1095,8 @@ section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px;
 }
 /*---/FAQ Accordion: smooth open/close animation---*/
 
+.f3-home section.f3-faq .row > div.col-12{ position:relative; z-index:1; }
+
 
 /* ===================================
    OFFCANVAS SIDE MENU 
@@ -1117,11 +1123,15 @@ section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px;
     align-items: center;
     flex-wrap: nowrap;
     gap: 12px;
-    position: absolute;
+    /*position: fixed;was--> position: absolute; AND JS working here --> `function updateMenuPosition()`*/
+    position: absolute; 
+    
     top: 25px;
     right:1px;
     z-index: 44;
 }
+/* .f3-menu-sticky { position: sticky; top: 0; z-index: 1040;  } */
+
 /* Fix Submit button width */
 .container-btn-trigger-position.__menu .f3-btn {
   width: auto;
@@ -1136,12 +1146,19 @@ section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px;
   display: inline-flex;
   align-items: center;
 }
-.container-btn-trigger-position.__menu .site-menu-trigger:hover,
-.container-btn-trigger-position.__menu .f3-btn:hover{
+/* .container-btn-trigger-position.__menu .site-menu-trigger:hover{
     background: var(--f3-olive-dark);
     border: 1px solid var(--f3-olive-dark);
     color: var(--f3-white) !important;
+} */
+.container-btn-trigger-position.__menu .f3-btn:hover,
+.container-btn-trigger-position.__menu .site-menu-trigger:hover{
+    /*background: var(--f3-olive-dark);*/
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #E6EFAA 0%, #C1D82F 50%, #76841D 100%);
+    border: 1px solid var(--f3-olive-dark);
+    color: var(--f3-white) !important;
 }
+
 .container-btn-trigger-position.__menu .site-menu-trigger span {
   display: block;
   width: 20px;
@@ -1248,10 +1265,7 @@ body.menu-is-open { overflow: hidden; }
    OFFCANVAS SIDE MENU ==> END
 ===================================*/
 
-
-
-
-
+.f3-home #gform_1 .grecaptcha-badge{ display:none !important; }
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (min-width: 1650px) {
@@ -1352,11 +1366,13 @@ body.menu-is-open { overflow: hidden; }
     .f3-home .f3-contact #gform_submit_button_1{ bottom: 100px !important; }
 
     section.f3-projects .f3-project-card__body { padding: 12px 20px 28px; }
-    section.f3-projects .f3-project-card__city { font-size: 18px; }
+    section.f3-projects .f3-project-card__city { font-size: 18px; margin-top: 90px !important; }
     section.f3-projects .f3-project-card__label { font-size: 26px; }
-    section.f3-projects .f3-project-card__status { font-size: 13px; margin-bottom: 50px; }
+    section.f3-projects .f3-project-cards { padding-bottom: 60px; }
 
-    .f3-home section.f3-faq .f3-accordion { padding: 65px 5%; }
+     .f3-home section.f3-faq .f3-accordion { padding: 65px 5%; }
+
+    .container-btn-trigger-position.__menu > .row { top:77px; }
 }
 @media (max-width: 991px) {
     :root {
@@ -1400,7 +1416,7 @@ body.menu-is-open { overflow: hidden; }
     }
     .f3-home .f3-contact #gform_submit_button_1{ position:inherit; }
 
-    section.f3-projects .f3-project-card__body { padding: 80px 20px 28px; }
+    section.f3-projects .f3-project-card__body { padding: 15px 20px 28px; }
     section.f3-projects .f3-project-card__city { font-size: 19px; }
     section.f3-projects .f3-project-card__label { font-size: 30px; }
     section.f3-projects .f3-project-card__status { font-size: 16px; margin-bottom: 15px; }
@@ -1450,6 +1466,8 @@ body.menu-is-open { overflow: hidden; }
     .f3-home section.f3-faq .f3-accordion{ padding: 35px 25px; }
 
     .f3-home .f3-hero .f3-hero__content .f3-hero__subtext, .f3-home section.f3-contact .f3-section__text { max-width:80%; }
+
+    .container-btn-trigger-position.__menu > .row { top:25px; }
 }
 @media (max-width: 575px) {
     section.f3-projects .f3-project-card {
@@ -1486,11 +1504,13 @@ body.menu-is-open { overflow: hidden; }
 
     .f3-home .f3-hero .f3-hero__content .f3-hero__subtext, .f3-home section.f3-contact .f3-section__text { max-width:100%; }
 
+    section.f3-projects .f3-photo-pair-f3-projects { display: inherit; }
+
     [data-aos] {opacity: 1 !important;  transform: none !important; }
 }
 @media (max-width: 457px) {
     section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{  margin-bottom: 1rem !important; }
-    section.f3-projects .f3-project-card__img-wrap { width: 51%; }
+    section.f3-projects .f3-project-card__img-wrap { width: 37%; }
     section.f3-projects .f3-project-card { margin-right: inherit; margin-left: inherit; }
 
     .f3-home .f3-experience .f3-btn--outline{ border-color: var(--f3-text-dark2); color: var(--f3-text-dark2) !important; }

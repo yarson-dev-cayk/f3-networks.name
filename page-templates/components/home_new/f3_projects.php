@@ -4,11 +4,11 @@
         <div class="row">
 
             <!-- Left: heading + text + 2 photos -->
-            <div class="col-12 col-lg-5">
+            <div class="col-12 col-xl-5">
                 <?php if($projects_title = get_field('projects_title')):?><h2 class="f3-section__heading" data-aos="fade-right"><?php echo $projects_title;?></h2><?php endif;?>
                 <?php if($projects_subtitle = get_field('projects_subtitle')):?><p class="f3-section__text" data-aos="fade-up"><?php echo $projects_subtitle;?></p><?php endif;?>
              
-                <div class="f3-photo-pair f3-photo-pair-f3-projects text-center text-lg-start">
+                <div class="f3-photo-pair f3-photo-pair-f3-projects text-center text-lg-start mt-1 mt-sm-4 mt-md-3 mt-lg-3">
                     <?php if($projects_image1 = get_field('projects_image1')): ?>
                         <img class="f3-photo-pair-f3-projects-1 me-2" src="<?php echo esc_url($projects_image1);?>" alt="Cable infrastructure">
                     <?php else: ?>
@@ -24,7 +24,7 @@
             </div>
 
             <!-- Right: project cards -->
-            <div class="col-12 col-lg-7 mt-4 mt-lg-0 f3-project-cards--container">
+            <div class="col-12 col-xl-7 mt-4 mt-xl-0 f3-project-cards--container">
                 <img class="f3-feature-box__pill" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/color_thingy.svg" alt="green-icon">
                 <div class="row g-4 f3-project-cards">
                     <?php if(have_rows('projects_blocks')) :?>
