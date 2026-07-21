@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 	/*__/Contact Form - Gravity Form Plugin*/
 
-
 	/*OFFCANVAS SIDE MENU - Main Menu - keep the element with buttons inside .container*/
 	// function updateMenuPosition(){
 	// 	const container = document.querySelector('.container-btn-trigger-position.__menu');
@@ -59,4 +58,51 @@ document.addEventListener('DOMContentLoaded', function(){
 	// }
 	// window.addEventListener('load', updateMenuPosition); window.addEventListener('resize', updateMenuPosition);
 	/*__/OFFCANVAS SIDE MENU - Main Menu - keep the element with buttons inside .container*/
+	
+	
+   	/*Construction Notice` Section -Tabs ==> #pt_wrapper_tabs*/
+	const nav = document.querySelector('.pt-tabs-nav');
+	if (nav && typeof window.ptTabsData !== 'undefined') {
+		const tabs = window.ptTabsData;
+
+		nav.addEventListener('click', function (e) {
+			const btn = e.target.closest('.pt-tab-btn');
+			if (!btn) return;
+
+			const index = parseInt(btn.dataset.tabIndex, 10);
+			const data = tabs[index];
+			if (!data) return;
+
+			nav.querySelectorAll('.pt-tab-btn').forEach(b => b.classList.remove('is-active'));
+			btn.classList.add('is-active');
+
+			const panels = document.querySelectorAll('.pt-tab-panel');
+			panels.forEach(p => p.classList.add('pt-fade-out'));
+
+			setTimeout(function () {
+				document.querySelectorAll('#pt_wrapper_tabs [data-pt]').forEach(function (el) {
+					const field = el.dataset.pt;
+					if (data.hasOwnProperty(field)) { el.textContent = data[field]; }
+				});
+				panels.forEach(p => p.classList.remove('pt-fade-out'));
+			}, 450);
+		});
+	}
+
+	const accordion = document.querySelector('.pt-accordion');
+	if (accordion) {
+		accordion.addEventListener('click', function (e) {
+			const header = e.target.closest('.pt-acc-header');
+			if (!header) return;
+
+			const item = header.closest('.pt-acc-item');
+			const wasOpen = item.classList.contains('is-open');
+
+			// close all, then open the clicked one (unless it was already open)
+			accordion.querySelectorAll('.pt-acc-item').forEach(i => i.classList.remove('is-open'));
+			if (!wasOpen) item.classList.add('is-open');
+		});
+	}
+	/*__/Construction Notice` Section -Tabs ==> #pt_wrapper_tabs*/
+
 });

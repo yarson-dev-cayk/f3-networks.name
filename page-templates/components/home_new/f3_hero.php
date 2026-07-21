@@ -11,8 +11,8 @@
     <div class="container-lg f3-hero__content mt-5">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <?php if($hero_title = get_field('hero_title')): ?><h1 class="f3-hero__heading" data-aos="fade-left" data-aos-delay="0"><?php echo $hero_title;?></h1><?php endif;?>
-                <?php if($hero_subtitle = get_field('hero_subtitle')): ?><p class="f3-hero__subtext" data-aos="fade-left" data-aos-delay="0"><?php echo $hero_subtitle;?></p><?php endif;?>
+                <?php if($hero_title = get_field('hero_title')): ?><h1 class="f3-hero__heading"><?php echo $hero_title;?></h1><?php endif;?>
+                <?php if($hero_subtitle = get_field('hero_subtitle')): ?><p class="f3-hero__subtext"><?php echo $hero_subtitle;?></p><?php endif;?>
                 
                 <?php
                 $hero_btnlink = get_field('hero_btnlink') ?? [];
