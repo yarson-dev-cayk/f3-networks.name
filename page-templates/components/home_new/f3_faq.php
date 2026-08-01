@@ -30,73 +30,7 @@
                         </div>
                     <?php endif;?>
                 </div>
-                <!-- <div class="f3-accordion-bg">
-                    <div class="f3-accordion">
-                        <div class="f3-accordion__item is-open">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                Who Is F3 Networks?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                        <div class="f3-accordion__item">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                What Does F3 Networks Do?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                        <div class="f3-accordion__item">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                Who Does F3 Networks Work With?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                        <div class="f3-accordion__item">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                What Solutions Does F3 Networks Offer?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                        <div class="f3-accordion__item">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                Where Is F3 Networks Active?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                        <div class="f3-accordion__item">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                How Can I Learn More About a Community Project?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                        <div class="f3-accordion__item">
-                            <button class="f3-accordion__trigger" aria-expanded="false">
-                                How Do I Contact F3 Networks or Submit a Request?
-                                <span class="f3-accordion__icon">+</span>
-                            </button>
-                            <div class="f3-accordion__body">
-                                <p>Answer content goes here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                
             </div><!--.col-->
         </div><!--.row-->
     </div><!--.container-->

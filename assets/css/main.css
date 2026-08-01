@@ -242,7 +242,8 @@ html { scroll-behavior: smooth; }
     background-repeat: no-repeat;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.7;
+    opacity: 1;
+    filter: saturate(2.2) brightness(1.1) contrast(1.15);
 }
 
 /* All section content sits above the zone overlays */
@@ -487,8 +488,6 @@ html { scroll-behavior: smooth; }
     background-position: center center;
     background-repeat: no-repeat;
 }
-
-
 
 /* ── S2: SUPPORTING ─────────────────────────────────────────── */
 section.f3-supporting {  padding-top:50px; } 
@@ -896,7 +895,6 @@ section.f3-future .f3-supporting__header .f3-hero__buttons{ margin-bottom: 15px;
   line-height: 1.2;
   margin: 4px 0 16px;
 }
-
 
 .f3-home .f3-form-wrapper {
     border: 1px solid rgba(255,255,255,0.35);
@@ -1421,12 +1419,242 @@ body.menu-is-open { overflow: hidden; }
 
 .f3-home #gform_1 .grecaptcha-badge, .grecaptcha-badge{ display:none !important; }
 
+/*===================ABOUT-US Page===================*/
+main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box{ padding: 5px 15px 15px 20px; }
+main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box__title{ margin: 0 0 1px 19%; }
+
+main.f3-uboutus-page .f3-offerings{ padding-bottom:1px; }
+/* main.f3-uboutus-page .f3-methodology{ padding-bottom:1px; } */
+
+.f3-uboutus-page .f3-zone--light .f3-zone__lines-overlay {
+    margin-top: -255px;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    width: 69%;
+    height: 115%;
+    /* background-image: url(../images/LINES_TOP2.png); */
+    background-size: auto 90%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.6;
+    filter: saturate(2.2) brightness(1.1) contrast(1.15);
+}
+.f3-uboutus-page .f3-cityscape--dark{ bottom: -705px; height: 901px; }
+.f3-uboutus-page .f3-preamble{
+    position: relative;
+    overflow: hidden;
+    margin-top: -134px; 
+    /* padding-top: 260px;
+    padding-bottom: 260px; */
+    display: flex;
+    align-items: center;
+    min-height: 620px;
+    z-index: 11;  
+}
+.f3-uboutus-page .f3-preamble .f3-cityscape{
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+.f3-uboutus-page .f3-preamble .container-lg {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 2;
+}
+.f3-uboutus-page .f3-preamble .f3-supporting__header {
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+.f3-uboutus-page .f3-blue__eye {
+    position: absolute;
+    right: 0;
+    top: -210px;
+    width: 75%;
+    height: 245%;
+    background-size: 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+    filter: saturate(2.2) brightness(1.1) contrast(1.15);
+}
+.f3-uboutus-page .f3-zone--dark__lines{
+    left: -104px;
+    top: -310px;
+    width: 70%;
+    background-position: top center;
+    height: 97%;
+    opacity: 0.9;
+    filter: saturate(2.2) brightness(1.1) contrast(1.15);
+}
+
+.f3-uboutus-page .f3-leadershipteam .f3-team-card-wrap { position: relative; }
+.f3-uboutus-page .f3-leadershipteam .f3-project-card{
+    background: var(--f3-white);
+    border-radius: 16px;
+    overflow: visible;
+    position: relative;
+    margin-top: 70px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
+    height: calc(100% - 70px);
+}
+.f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__img-wrap{
+    position: absolute;
+    top: -50px;
+    left: 43%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 17px 20px rgba(0, 0, 0, 0.45);
+}
+.f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__img-wrap img{
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* filter: grayscale(100%) contrast(1.05); */
+}
+.f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__img-wrap::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #2BA2D1;
+    mix-blend-mode: color;
+    pointer-events: none;
+    opacity: 0.4;
+}
+.f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{
+    padding: 150px 40px 15px 15px;
+    position: relative;
+    height: 100%;
+}
+.f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-project-card__accent{
+    position: absolute;
+    top: 45px;
+    right: -1px;
+    width: 50px;
+    height: 220px;
+    display: block;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.f3-uboutus-page .f3-mission .f3-feature-box .f3-feature-box__title{ font-size:18px; }
+
+
+.f3-team-swiper .f3-team-grid.swiper-wrapper { flex-wrap:nowrap; }
+.f3-team-swiper .swiper-slide { height:auto; }
+.f3-team-swiper{ padding-left: 45px; padding-right: 0; padding-bottom: 50px; }
+.f3-team-swiper .swiper-button-prev { left:0; color: #667219; }
+.f3-team-swiper .swiper-button-next { right:0; color: #667219; }
+
+.f3-uboutus-page .f3-methodology{ padding-bottom: 245px; }
+.f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-team-card__title{ font-size:15px; line-height:1; }
+
+
+@media (max-width: 1649px) {
+    main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box__title {margin: 0;}
+    main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box{ padding: 12px 15px 10px 20px; }
+}
+@media (max-width: 1399px) {
+    .f3-uboutus-page .f3-mission .f3-feature-box .f3-feature-box__title{ text-align:start; }
+    main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box__title {margin: 0;}
+    main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box{ padding: 12px 15px 10px 20px; }
+
+    .f3-uboutus-page .f3-foundation{ padding-bottom: 65px; }
+
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 120px 40px 15px 15px; }
+}
+@media (max-width: 1199px) {
+    #f3_home.f3-uboutus-page .f3-hero h1 br { display: none; }
+
+    .f3-uboutus-page .f3-approach .f3-photo-pair .f3-photo-pair-1{ width:110px; height:auto; }
+    .f3-uboutus-page .f3-approach .f3-photo-pair .f3-photo-pair-2{ width:240px; height:auto; }
+
+    .f3-uboutus-page .f3-preamble{ min-height: 505px; }
+
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 140px 41px 15px 15px; }
+}
+@media (max-width: 991px) {
+    .f3-uboutus-page .f3-preamble{ min-height: 395px; }
+    .f3-uboutus-page .f3-blue__eye {top:-230px; width:95%; height:234%; }
+}
+@media (max-width: 859px) { 
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 135px 50px 10px 15px; } 
+    .f3-uboutus-page .f3-leadershipteam .swiper .f3-project-card__body .f3-team-card__name{ font-size:17px; }
+}
+@media (max-width: 767px) {
+    .f3-uboutus-page .f3-blue__eye{ background-size:cover; height:250%; width:100%; top:-245px; }
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 168px 50px 10px 15px; } 
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-project-card__accent{ right: -11px; }
+    .f3-uboutus-page .f3-innovation .container, .f3-uboutus-page .f3-innovation .container-lg{ backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
+}
+@media (max-width: 676px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 140px 40px 10px 15px; } }
+@media (max-width: 619px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 120px 40px 10px 15px; } }
+@media (max-width: 575px) {
+    .f3-uboutus-page .f3-foundation{ padding-bottom: 65px; }
+    .f3-uboutus-page .f3-blue__eye{  top:-252px; }
+    .f3-uboutus-page .f3-zone--dark__lines{ left:80px; width:70%; }
+
+    .f3-uboutus-page .f3-methodology{ padding-bottom: 210px; }
+
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card{ width:70%; margin:0 auto; margin-top:70px; }
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 200px 50px 10px 15px; }
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-project-card__accent { right: -1px; }
+
+    .f3-uboutus-page .f3-preamble .f3-supporting__header .f3-btn { padding:8px 9px; }
+ 
+}
+@media (max-width: 529px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 175px 40px 10px 15px; } }
+@media (max-width: 484px) { 
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 150px 40px 10px 15px; } 
+    .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-project-card__accent{ top:32px; }
+}
+@media (max-width: 438px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card { width: 79%; } }
+@media (max-width: 399px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card { width: 90%; } }
+@media (max-width: 349px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card { width: 100%; } }
+@media (max-width: 339px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 135px 40px 10px 15px; } }
+@media (max-width: 457px) { 
+    .f3-uboutus-page .f3-approach .f3-photo-pair .f3-photo-pair-1 { margin-bottom: 1rem !important; }
+    .f3-uboutus-page .f3-approach.section-devider{ margin-top:30px; }
+    .f3-uboutus-page .f3-leadershipteam{ padding-bottom: 120px; }
+    .f3-uboutus-page .f3-innovation{ padding-bottom: 140px; }
+}
+/*==================/ ABOUT-US Page==================*/
+main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); line-height: 0.9; }
+.f3-uboutus-page .f3-section__text > p{ margin-bottom:12px; }
+
+
+/*===================CONTACT Page===================*/
+/*==================/ CONTACT Page==================*/
+
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (min-width: 1650px) {
     section.f3-supporting .col-12.col-lg-7 { overflow:visible; }
     section.f3-supporting .f3-feature-box-wrap { position:relative; margin-right:calc(-50vw + 50%); padding-right: calc(40vw - 50%); }
 }
-@media (min-width: 922px){ .page-template.page-template-template-home-new .ast-container{ display: block !important; } }
+@media (min-width: 1400px) { .f3-hero__content.container-lg { max-width: 1645px; } } /*Only affects at 1400px and up. 1399px and less `.container-lg` behaves 100% natively*/
+
+@media (min-width: 922px){ /*.ast-container*/
+    .page-template.page-template-template-home-new .ast-container,
+    .page-template.page-template-template-about-us .ast-container { display: block !important; } 
+}
     
 /*f3-cityscape-bridge` RESPONSIVE:*/
     /* ───────────────────────── `f3-cityscape-bridge` RESPONSIVE: 1350px*/

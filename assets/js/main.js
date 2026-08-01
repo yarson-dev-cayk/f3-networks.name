@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	if(window.innerWidth > 575) {AOS.init({ duration:1000, once:true, offset:120 });} //AOS Init (and works Desktop only)
 
+
+	//console.log(globalData);
+
 	/*OFFCANVAS SIDE MENU - Main Menu*/
 	function siteMenuOpen() {
 		document.getElementById('site-offcanvas').classList.add('is-open');
@@ -30,22 +33,24 @@ document.addEventListener('DOMContentLoaded', function(){
 		link.addEventListener('click', function() { siteMenuClose(); });
 	});
 	/*__/OFFCANVAS SIDE MENU - Main Menu*/
-
+	
 	/*Contact Form - Gravity Form Plugin*/
-	let wrapper = document.getElementById('contact_form');
-	if( !wrapper ) return; //nothing to watch, bail out
+	(function () {
+		let wrapper = document.getElementById('contact_form');
+		if (!wrapper) return; //nothing to watch, bail out
 
-	var observer = new MutationObserver(function () {
-		var confirmation = wrapper.querySelector('#gform_confirmation_message_1');
-		if (confirmation){
-			wrapper.classList.add('form--notification');
-			observer.disconnect(); //job done, stop watching
-		}
-	});
-	observer.observe(wrapper, {
-		childList: true,
-		subtree: true
-	});
+		var observer = new MutationObserver(function () {
+			var confirmation = wrapper.querySelector('#gform_confirmation_message_1');
+			if (confirmation) {
+				wrapper.classList.add('form--notification');
+				observer.disconnect(); //job done, stop watching
+			}
+		});
+		observer.observe(wrapper, {
+			childList: true,
+			subtree: true
+		});
+	})();
 	/*__/Contact Form - Gravity Form Plugin*/
 
 	/*OFFCANVAS SIDE MENU - Main Menu - keep the element with buttons inside .container*/
@@ -105,4 +110,36 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 	/*__/Construction Notice` Section -Tabs ==> #pt_wrapper_tabs*/
 
+	//SwiperJS Slider in "About Us" Page
+	let swiperjsSliderDOM = document.querySelector('.swiper');
+	if(swiperjsSliderDOM) { //https://swiperjs.com/
+		//Pull Slider Options from globalData (localized via wp_localize_script)
+		const sliderOptions = (typeof globalData !== 'undefined' && globalData.leadershipTeamSlider) ? globalData.leadershipTeamSlider : { autoplay:false, navigation:true, speed:2000 };
+		let sliderOptionsAutoplay;
+		if(sliderOptions.autoplay){	sliderOptionsAutoplay = { delay:4000, disableOnInteraction:false, pauseOnMouseEnter:true} }else{ sliderOptionsAutoplay = false; }
+		let sliderNavigation;
+		if(sliderOptions.navigation){ sliderNavigation = { nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev' } }else{ sliderNavigation = false; }
+
+		const swiper = new Swiper('.swiper', {
+			//direction:'vertical',
+			loop: true, //---> loop: count > 4,
+			effect: 'slide', //---> slide|fade|cube|coverflow|flip
+			slidesPerView: 'auto',
+			slidesPerGroup: 1,
+			spaceBetween: 20,
+			speed: sliderOptions.speed, //---> sliderOptions.speed,
+			//centeredSlides: true,
+			autoplay: sliderOptionsAutoplay,
+
+			pagination: { el:'.swiper-pagination', clickable:true },
+			navigation: sliderNavigation,
+			breakpoints: {
+				0:{	slidesPerView:1, spaceBetween:26, },
+				576:{ slidesPerView:2, spaceBetween:25, },
+				768:{ slidesPerView:3,	spaceBetween:25, },
+				1200:{ slidesPerView: 4, spaceBetween: 25, },
+			}
+		});
+	}
+	//__/SwiperJS Slider in "About Us" Page
 });
