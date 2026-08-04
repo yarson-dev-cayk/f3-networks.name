@@ -21,6 +21,11 @@ function get_all_menu($menu_slug, $order = 'ASC'){
 } //Call: get_all_menu('primary'); / get_all_menu('primary','DESC');
 
 
+function get_numerics($str){ preg_match_all('/\d+/', $str, $matches); return implode("",$matches[0]); }
+
+function get_iframe_src($iframe_html){ if( preg_match('/src=(["\'])(.*?)\1/i', $iframe_html, $matches) ){ return esc_url($matches[2]); } return null; }
+
+
 //`Construction Notice` Section -Tabs ==> #pt_wrapper_tabs
 function project_tabs_shortcode() {
     if( ! have_rows('current_construction_tabs') ) { return '<p>No tabs found.</p>'; }

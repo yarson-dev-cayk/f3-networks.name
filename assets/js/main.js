@@ -142,4 +142,13 @@ document.addEventListener('DOMContentLoaded', function(){
 		});
 	}
 	//__/SwiperJS Slider in "About Us" Page
+
+
+    const mapContainer = document.getElementById('g_map_frame_container');
+	if(mapContainer){
+		const mapLogo = mapContainer.querySelector('.map-logo');
+		mapContainer.addEventListener('mouseenter',() => { mapLogo.classList.add('is-active'); });
+		mapContainer.addEventListener('mouseleave', () => {	mapLogo.classList.remove('is-active'); });
+	}
+
 });

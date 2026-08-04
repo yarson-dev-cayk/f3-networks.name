@@ -10,4 +10,5 @@
 
 require_once('inc/wp_enqueue.php'); //SCRIPTS/STYLES
 require_once('inc/extras.php'); //EXTRAS
+require_once('inc/acf_functions.php'); //ACF functions
 //require_once('inc/widgets.php'); //WIDGETS

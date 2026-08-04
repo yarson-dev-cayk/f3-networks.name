@@ -23,7 +23,7 @@
 			</li>
 		<?php } ?>
 	</ul>
-	<a href="#contact" class="f3-btn f3-btn f3-btn--outline mt-4">Submit a Request</a>
+	<a href="/#contact_form" class="f3-btn f3-btn f3-btn--outline mt-4">Submit a Request</a>
   </div>
 </nav>
 <!--/Backdrop overlay-->
@@ -38,7 +38,7 @@
 				<span></span>
 			</button>
 			<!-- Submit a Request button -->
-			<a href="#contact" class="f3-btn f3-btn--outline d-none d-md-block me-4 me-lg-0">Submit a Request</a>
+			<a href="/#contact_form" class="f3-btn f3-btn--outline d-none d-md-block me-4 me-lg-0">Submit a Request</a>
 		</div>
 	</div>
 </div>

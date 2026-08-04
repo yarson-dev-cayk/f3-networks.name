@@ -398,7 +398,7 @@ html { scroll-behavior: smooth; }
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center right;
+    background-position: center center;
     background-repeat: no-repeat;
     z-index: 0;
 }
@@ -1642,6 +1642,26 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
 
 
 /*===================CONTACT Page===================*/
+.f3-home.f3-contact-page .f3-hero__heading{ font-size: clamp(29px, 5.5vw, 81px); line-height: 0.9; }
+.f3-contact-page .f3-googlemap .g-map--frame-container iframe{ width:100%; border:0; }
+.f3-contact-page .f3-googlemap .g-map--frame-container{ position:relative; }
+.f3-contact-page .f3-googlemap .g-map--frame-container .map-overlay{ position:absolute; inset:0; background:#0c4f8f;  opacity:.35; pointer-events:none; } /*background:#000000;*/
+.f3-contact-page .f3-googlemap .g-map--frame-container .map-logo{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:90px; z-index:3; pointer-events:none; opacity:1; }
+.f3-contact-page .f3-googlemap .g-map--frame-container .map-logo.is-active{ opacity: .30; }
+
+.f3-contact-page .f3-contact-info{ padding-bottom: 75px; }
+.f3-contact-page .f3-googlemap{ padding-bottom:1px; }
+
+.f3-contact-page .contact-info-phone, .f3-contact-page .contact-info-social { color:var(--f3-olive-dark); letter-spacing:2px; transition:font-weight .9s ease, letter-spacing .9s ease; }
+.f3-contact-page .contact-info-phone:hover, .f3-contact-page .contact-info-social:hover{ font-weight:bold; letter-spacing:1px; }
+
+@media (max-width: 767px) { 
+    .f3-contact-page .f3-googlemap .g-map--frame-container iframe{ height:470px; } 
+}
+@media (max-width: 575px) { 
+    .f3-contact-page .f3-googlemap .g-map--frame-container iframe{ height:350px; } 
+    .f3-contact-page .f3-contact-info.section-devider2{ padding-top: 60px; padding-bottom: 25px; }
+ }
 /*==================/ CONTACT Page==================*/
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
@@ -1653,7 +1673,8 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
 
 @media (min-width: 922px){ /*.ast-container*/
     .page-template.page-template-template-home-new .ast-container,
-    .page-template.page-template-template-about-us .ast-container { display: block !important; } 
+    .page-template.page-template-template-about-us .ast-container,
+    .page-template.page-template-template-contact-us .ast-container { display: block !important; } 
 }
     
 /*f3-cityscape-bridge` RESPONSIVE:*/
