@@ -13,11 +13,19 @@
             <!-- Right: photos-->
             <div class="col-12 col-lg-5 text-center text-lg-start mb-4 mb-lg-0">
                 <div class="f3-photo-pair">
-                    <?php if($approach_image1 = get_field('approach_image1')): ?>
-                        <img class="f3-photo-pair-1 me-3" src="<?php echo esc_url($approach_image1);?>" alt="Infrastructure work">
-                    <?php else: ?>
-                        <img class="f3-photo-pair-1 me-3" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work">
+                    <!-- <?php //if($approach_image1 = get_field('approach_image1')): ?>
+                        <img class="f3-photo-pair-1 me-3" src="<?php //echo esc_url($approach_image1);?>" alt="Infrastructure work">
+                    <?php //else: ?>
+                        <img class="f3-photo-pair-1 me-3" src="<?php //echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work">
+                    <?php //endif;?> -->
+                    <?php if($approach_image1 = get_field('approach_image1')):?>
+                        <picture>
+                            <source media="(max-width: 457px)" srcset="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1-1.png"><img class="f3-photo-pair-1 me-2" src="<?php echo esc_url($approach_image1);?>" alt="Infrastructure work">
+                        </picture>
+                    <?php else:?>
+                        <img class="f3-photo-pair-1 me-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work">
                     <?php endif;?>
+
 
                     <?php if($approach_image2 = get_field('approach_image2')): ?>
                         <img class="f3-photo-pair-2" src="<?php echo esc_url($approach_image2);?>" alt="Infrastructure work">

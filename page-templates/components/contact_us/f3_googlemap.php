@@ -2,7 +2,7 @@
 $googlemap_title = get_field('googlemap_title');
 $googlemap_subtitle = get_field('googlemap_subtitle');
 
-$googlemap_map = get_field('googlemap_map'); dd($googlemap_map);
+$googlemap_map = get_field('googlemap_map');
 $googlemap_map_height = get_field('googlemap_map_height');
 $googlemap_map_logo_cover = get_field('googlemap_map_logo_cover');
 ?>

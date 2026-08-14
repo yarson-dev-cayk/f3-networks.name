@@ -15,11 +15,19 @@
             <!-- Left: photos + button -->
             <div class="offset-0 offset-lg-1 col-12 col-lg-4 text-center text-lg-start f3-supporting__left mb-4 mb-lg-0">
                 <div class="f3-photo-pair">
-                    <?php if($supporting_image1 = get_field('supporting_image1')): ?>
-                        <img class="f3-photo-pair-1 me-2" src="<?php echo esc_url($supporting_image1);?>" alt="Infrastructure work">
-                    <?php else: ?>
+                    <!-- <?php //if($supporting_image1 = get_field('supporting_image1')): ?>
+                        <img class="f3-photo-pair-1 me-2" src="<?php //echo esc_url($supporting_image1);?>" alt="Infrastructure work">
+                    <?php //else: ?>
+                        <img class="f3-photo-pair-1 me-2" src="<?php //echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work">
+                    <?php //endif;?> -->
+                    <?php if($supporting_image1 = get_field('supporting_image1')):?>
+                        <picture>
+                            <source media="(max-width: 457px)" srcset="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1-1.png"><img class="f3-photo-pair-1 me-0" src="<?php echo esc_url($supporting_image1);?>" alt="Infrastructure work">
+                        </picture>
+                    <?php else:?>
                         <img class="f3-photo-pair-1 me-2" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/supporting-1.webp" alt="Infrastructure work">
                     <?php endif;?>
+                   
 
                     <?php if($supporting_image2 = get_field('supporting_image2')): ?>
                         <img class="f3-photo-pair-2" src="<?php echo esc_url($supporting_image2);?>" alt="Network infrastructure">

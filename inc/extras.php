@@ -115,3 +115,12 @@ function project_tabs_shortcode() {
     return ob_get_clean();
 } add_shortcode( 'project_tabs', 'project_tabs_shortcode' );
 //__/`Construction Notice` Section -Tabs ==> #pt_wrapper_tabs
+
+//Custom color for Tab "Solutions" CPT in Admin-Panel
+function solutions_admin_menu_style() {
+	echo '<style>
+		#adminmenu .menu-icon-solution a .wp-menu-name { color: #667219; font-weight:bold; letter-spacing:3px; }
+		#adminmenu .menu-icon-solution div.wp-menu-image:before { color: #667219; }
+		#adminmenu .menu-icon-solution:hover a .wp-menu-name, #adminmenu .menu-icon-solution.wp-has-current-submenu a .wp-menu-name { color: #3b430e; }
+	</style>';
+} add_action( 'admin_head', 'solutions_admin_menu_style' );

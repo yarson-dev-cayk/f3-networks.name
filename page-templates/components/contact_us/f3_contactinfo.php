@@ -29,7 +29,7 @@ $f3_linkedin = get_field('f3_linkedin','option');
                             <div class="f3-feature-box flex-grow-1 d-flex flex-column">
                                 <?php if($contactinfo_blocks_title):?><h3 class="f3-feature-box__title text-uppercase mt-3"><?php echo esc_html($contactinfo_blocks_title);?></h3><?php endif;?>
                                 <?php if($i === 1 && $f3_phone1):?><a class="f3-feature-box__text text-decoration-none contact-info-phone mb-1 " href="tel:<?php echo get_numerics($f3_phone1);?>"><?php echo esc_html($f3_phone1);?></a><?php endif;?>
-                                <?php if($i === 2 && $f3_linkedin):?><a class="f3-feature-box__text text-decoration-none contact-info-social mb-1" href="<?php echo esc_html($f3_linkedin);?>" target="_blank">linkedin</a><?php endif;?>
+                                <?php if($i === 2 && $f3_linkedin):?><a class="f3-feature-box__text text-decoration-none contact-info-social mb-1" href="<?php echo esc_html($f3_linkedin);?>" target="_blank">linkedIn</a><?php endif;?>
                                 <?php if($contactinfo_blocks_text):?><p class="f3-feature-box__text mb-1"><?php echo esc_html($contactinfo_blocks_text);?></p><?php endif;?>
                                 <?php if($i === 0 && $f3_address):?><p class="f3-feature-box__text mb-1"><?php echo esc_html($f3_address);?></p><?php endif;?>
                             </div>
