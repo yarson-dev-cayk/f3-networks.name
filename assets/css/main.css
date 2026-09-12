@@ -1631,6 +1631,9 @@ main.f3-uboutus-page .f3-offerings{ padding-bottom:1px; }
 .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-team-card__title{ font-size:15px; line-height:1; }
 
 
+a[href="#default-hidden"]{ visibility:hidden !important; }
+
+
 @media (max-width: 1649px) {
     main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box__title {margin: 0;}
     main.f3-uboutus-page .f3-mission .f3-feature-box-wrap .f3-feature-box{ padding: 12px 15px 10px 20px; }
@@ -1657,6 +1660,7 @@ main.f3-uboutus-page .f3-offerings{ padding-bottom:1px; }
 @media (max-width: 991px) {
     .f3-uboutus-page .f3-preamble{ min-height: 395px; }
     .f3-uboutus-page .f3-blue__eye {top:-230px; width:95%; height:234%; }
+    section.f3-supporting.f3-approach .f3-photo-pair img.f3-photo-pair-1, section.f3-supporting.f3-approach .f3-photo-pair img.f3-photo-pair-2 { width: inherit; }
 }
 @media (max-width: 859px) { 
     .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body{ padding: 135px 50px 10px 15px; } 
@@ -1698,7 +1702,7 @@ main.f3-uboutus-page .f3-offerings{ padding-bottom:1px; }
 @media (max-width: 349px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card { width: 100%; } }
 @media (max-width: 339px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 135px 40px 10px 15px; } }
 @media (max-width: 457px) { 
-    .f3-uboutus-page .f3-approach .f3-photo-pair .f3-photo-pair-1 { margin-bottom: 1rem !important; display:none; }
+    .f3-uboutus-page .f3-approach .f3-photo-pair .f3-photo-pair-1 { margin-bottom: 1rem !important; margin-right: 0 !important; }
     .f3-uboutus-page .f3-approach.section-devider{ margin-top:30px; }
     .f3-uboutus-page .f3-leadershipteam{ padding-bottom: 120px; }
     .f3-uboutus-page .f3-innovation{ padding-bottom: 140px; }
@@ -2142,7 +2146,7 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
     [data-aos] {opacity: 1 !important;  transform: none !important; }
 }
 @media (max-width: 457px) {
-    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{  margin-bottom: 1rem !important; }
+    section.f3-supporting .f3-supporting__left .f3-photo-pair img.f3-photo-pair-1{ margin-bottom: 1rem !important; margin-right: 0 !important; }
     section.f3-projects .f3-project-card__img-wrap { width: 37%; }
     section.f3-projects .f3-project-card { margin-right: inherit; margin-left: inherit; }
 

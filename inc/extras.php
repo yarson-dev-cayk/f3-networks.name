@@ -124,3 +124,24 @@ function solutions_admin_menu_style() {
 		#adminmenu .menu-icon-solution:hover a .wp-menu-name, #adminmenu .menu-icon-solution.wp-has-current-submenu a .wp-menu-name { color: #3b430e; }
 	</style>';
 } add_action( 'admin_head', 'solutions_admin_menu_style' );
+
+//Custom WordPress login page styling (`wp-login.php`, `wp-admin`)
+function f3_custom_login_style() {
+    ?>
+    <style>
+        body.login { background-color: #243c54; }
+        .login h1 { margin-bottom: 20px; }
+        .login #nav a, .login #backtoblog a{ color:white; font-size: 16px; }
+        .login #nav a:hover, .login #backtoblog a:hover { color:#c2d92d; }
+        .login form { border-radius:9px;  outline:2px solid #c2d92d;}
+        .login h1 a {
+            background-image: url('http://f3-networks.name/wp-content/uploads/2026/05/f3-fav.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 320px;
+            height: 125px;
+        }
+    </style>
+    <?php
+} add_action( 'login_head', 'f3_custom_login_style' );
