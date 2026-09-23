@@ -1686,8 +1686,22 @@ a[href="#default-hidden"]{ visibility:hidden !important; }
     .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body .f3-project-card__accent { right: -1px; }
 
     .f3-uboutus-page .f3-preamble .f3-supporting__header .f3-btn { padding:8px 9px; }
- 
+
+    /*Sticky Header navigation*/
+    /* Sticky navigation — ONLY applies once body has .sticky-mobile-nav, which JS adds/removes based on scroll position. At rest (page load,not scrolled) these rules do nothing*/
+    body.sticky-mobile-nav header.elementor-location-header .e-image-link-base { position:fixed; /*background:#29435A;*/ background:rgba(41, 67, 90, 0.9); height:55px; }
+    body.sticky-mobile-nav header.elementor-location-header .e-image-link-base > img { position:relative; top:0; max-width:51%; }
+    body.sticky-mobile-nav .container-btn-trigger-position.__menu .site-menu-trigger { position:fixed; top:3px; }
+    /*__/Sticky Header navigation*/
 }
+/*Sticky Header navigation*/
+@media (max-width: 485px){ body.sticky-mobile-nav header.elementor-location-header .e-image-link-base > img { max-width:63%; } }
+@media (max-width: 428px){ body.sticky-mobile-nav header.elementor-location-header .e-image-link-base > img { max-width:70%; } }
+@media (max-width: 396px){ body.sticky-mobile-nav header.elementor-location-header .e-image-link-base > img { max-width:76%; } }
+@media (max-width: 355px){ body.sticky-mobile-nav header.elementor-location-header .e-image-link-base > img { max-width:80%; } }
+/*__/Sticky Header navigation*/
+
+
 @media (max-width: 529px) { .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 175px 40px 10px 15px; } }
 @media (max-width: 484px) { 
     .f3-uboutus-page .f3-leadershipteam .f3-project-card .f3-project-card__body { padding: 150px 40px 10px 15px; } 
@@ -1889,6 +1903,8 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
 @media (max-width: 499px) { .f3-solutions-cpt-page ._solutions-cpt-page .f3-hero{ min-height:43vh; padding-bottom:55px; } }
 /*==================/ SOLUTIONS CPT==================*/
 
+/*.sticky-top.f3-menu-sticky .container-btn-trigger-position.__menu{ position:fixed; } @Y:1*/ 
+
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (min-width: 1650px) {
@@ -2072,7 +2088,7 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
         min-height: 55vh; /*70vh*/
     }
     .f3-hero__bg-image {
-        background-position: 65% 100%;
+        background-position: 65% 100%; /*background-position: 1% 100%;*/ /*@Y:4*/ 
     }
     .f3-project-card {
         margin-top: 60px;
@@ -2105,6 +2121,8 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
 
     .f3-section.f3-hero .f3-hero__buttons a.f3-btn{ background: rgb(0 0 0 / 33%); }
     .f3-section.f3-hero .f3-hero__buttons a.f3-btn:hover { background:linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),linear-gradient(180deg,#E6EFAA 0%,#C1D82F 50%,#76841D 100%); border:1px solid var(--f3-olive-dark); }
+
+    /*section.f3-experience .f3-feature-box { background:#08091957; } @Y:6*/
 }
 @media (max-width: 575px) {
     section.f3-projects .f3-project-card {
@@ -2124,7 +2142,7 @@ main.f3-uboutus-page .f3-hero__heading { font-size: clamp(34px, 5.5vw, 81px); li
     .f3-home .f3-reach__note { margin-bottom:0 !important; }
     .f3-home .f3-form-wrapper{ padding-right:12px; padding-left:12px; }
 
-    .f3-home .f3-contact #gform_submit_button_1 {width:100%;}
+    .f3-home .f3-contact #gform_submit_button_1 { width:75%; margin:0 auto; }
     .f3-hero__subtext,
     section.f3-supporting .f3-section__text, section.f3-growth .f3-section__text, section.f3-projects .f3-section__text, section.f3-experience .f3-section__text, section.f3-solutions .f3-section__text, section.f3-future .f3-section__text, section.f3-contact .f3-section__text{ font-size: 14px; }
     .f3-home .f3-feature-box__text{ font-size: 15px; }

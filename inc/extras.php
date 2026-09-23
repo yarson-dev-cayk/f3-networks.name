@@ -135,7 +135,7 @@ function f3_custom_login_style() {
         .login #nav a:hover, .login #backtoblog a:hover { color:#c2d92d; }
         .login form { border-radius:9px;  outline:2px solid #c2d92d;}
         .login h1 a {
-            background-image: url('http://f3-networks.name/wp-content/uploads/2026/05/f3-fav.png');
+            background-image: url('http://f3-networks.name/wp-content/uploads/2026/09/F3_logo_full-1.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;

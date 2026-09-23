@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		const swiper = new Swiper('.swiper', {
 			//direction:'vertical',
-			loop: true, //---> loop: count > 4,
+			loop: false, //---> loop: count > 4,
 			effect: 'slide', //---> slide|fade|cube|coverflow|flip
 			slidesPerView: 'auto',
 			slidesPerGroup: 1,
@@ -150,5 +150,59 @@ document.addEventListener('DOMContentLoaded', function(){
 		mapContainer.addEventListener('mouseenter',() => { mapLogo.classList.add('is-active'); });
 		mapContainer.addEventListener('mouseleave', () => {	mapLogo.classList.remove('is-active'); });
 	}
+
+	/*Sticky Header navigation*/
+	(function (){
+		var logoImg = document.querySelector('.e-image-link-base > img.e-image-base');
+		var stickyLogoSrc = 'http://f3-networks.name/wp-content/uploads/2026/09/F3_logo_full.png';
+		// var stickyLogoSrc = 'http://f3-networks.name/wp-content/uploads/2026/09/F3_logo_full-1.png';
+		var originalLogoSrc = null;
+		var originalSrcset = null;
+
+		if( logoImg ){
+			originalLogoSrc = logoImg.getAttribute('src');
+			originalSrcset = logoImg.getAttribute('srcset');
+		}
+
+		var mobileQuery = window.matchMedia('(max-width: 575px)');
+		var isStuck = false;
+		var ticking = false;
+
+		function applySticky(){
+			document.body.classList.add('sticky-mobile-nav');
+			if( logoImg ){
+				logoImg.setAttribute('src', stickyLogoSrc);
+				logoImg.removeAttribute('srcset');
+				logoImg.removeAttribute('sizes');
+			}
+			isStuck = true;
+		}
+		function removeSticky(){
+			document.body.classList.remove('sticky-mobile-nav');
+			if( logoImg && originalLogoSrc ){
+				logoImg.setAttribute('src', originalLogoSrc);
+				if( originalSrcset ){ logoImg.setAttribute('srcset', originalSrcset); }
+			}
+			isStuck = false;
+		}
+		function updateStickyState(){
+			//Only ever active on mobile widths — on desktop, always ensure it's removed
+			if( !mobileQuery.matches ){
+				if(isStuck) { removeSticky(); }
+				ticking = false;
+				return;
+			}
+			var scrolled = window.scrollY > 0;
+			if(scrolled && !isStuck) { applySticky(); }
+			else if( !scrolled && isStuck ){ removeSticky(); }
+			ticking = false;
+		}
+		function onScroll() { if (!ticking){ window.requestAnimationFrame(updateStickyState); ticking = true; } }
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', updateStickyState);
+		//run once on load in case the page opens already scrolled, or already desktop-width
+		updateStickyState();
+	})();
+	/*__/Sticky Header navigation*/
 
 });
